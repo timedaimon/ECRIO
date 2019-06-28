@@ -1,6 +1,6 @@
 /**
  *  @file
- *  @copyright defined in eos/LICENSE
+ *  @copyright defined in eos/LICENSE.txt
  *  @defgroup eosclienttool EOSIO Command Line Client Reference
  *  @brief Tool for sending transactions and querying state from @ref nodeos
  *  @ingroup eosclienttool
@@ -570,15 +570,6 @@ chain::action create_delegate(const name& from, const name& receiver, const asse
                         config::system_account_name, N(delegatebw), act_payload);
 }
 
-fc::variant regproducer_variant(const account_name& producer, const public_key_type& key, const string& url, uint16_t location) {
-   return fc::mutable_variant_object()
-            ("producer", producer)
-            ("producer_key", key)
-            ("url", url)
-            ("location", location)
-            ;
-}
-
 chain::action create_open(const string& contract, const name& owner, symbol sym, const name& ram_payer) {
    auto open_ = fc::mutable_variant_object
       ("owner", owner)
@@ -696,7 +687,43 @@ asset to_asset( account_name code, const string& s ) {
 }
 
 inline asset to_asset( const string& s ) {
-   return to_asset( N(eosio.token), s );
+   return to_asset( N(ecrio.token), s );
+}
+
+asset to_dapp_asset( account_name code, const string& s ) {
+   static map< pair<account_name, eosio::chain::symbol_code>, eosio::chain::symbol> cache;
+   auto a = asset::from_string( s );
+   eosio::chain::symbol_code sym = a.get_symbol().to_symbol_code();
+   
+   auto it = cache.find( make_pair(code, sym) );
+   
+   auto sym_str = a.symbol_name();
+   if ( it == cache.end() ) {
+      auto json = call(get_currency_stats_func, fc::mutable_variant_object("json", false)
+                       ("code", code)
+                       ("symbol", sym_str)
+      );
+      auto obj = json.get_object();
+      auto obj_it = obj.find( sym_str );
+      if (obj_it != obj.end()) {
+         auto result = obj_it->value().as<eosio::chain_apis::read_only::get_currency_stats_result>();
+         auto p = cache.emplace( make_pair( code, sym ), result.max_supply.get_symbol() );
+         it = p.first;
+      } else {
+         EOS_THROW(symbol_type_exception, "Symbol ${s} is not supported by token contract ${c}", ("s", sym_str)("c", code));
+      }
+   }
+   
+   auto expected_symbol = it->second;
+   if ( a.decimals() < expected_symbol.decimals() ) {
+      auto factor = expected_symbol.precision() / a.precision();
+      auto a_old = a;
+      a = asset( a.get_amount() * factor, expected_symbol );
+   } else if ( a.decimals() > expected_symbol.decimals() ) {
+      EOS_THROW(symbol_type_exception, "Too many decimal digits in ${a}, only ${d} supported", ("a", a)("d", expected_symbol.decimals()));
+   } // else precision matches
+   
+   return a;
 }
 
 struct set_account_permission_subcommand {
@@ -953,30 +980,75 @@ CLI::callback_t obsoleted_option_host_port = [](CLI::results_t) {
 struct register_producer_subcommand {
    string producer_str;
    string producer_key_str;
+   string contract_str;
+   string transfer_ratio;
    string url;
    uint16_t loc = 0;
+   string city;
+   string logo;
 
    register_producer_subcommand(CLI::App* actionRoot) {
       auto register_producer = actionRoot->add_subcommand("regproducer", localized("Register a new producer"));
       register_producer->add_option("account", producer_str, localized("The account to register as a producer"))->required();
       register_producer->add_option("producer_key", producer_key_str, localized("The producer's public key"))->required();
+      register_producer->add_option("contract", contract_str, localized("The producer's dapp token contract"))->required();
+      register_producer->add_option("transfer_ratio", transfer_ratio, localized("Percentage of payments per CR."))->required();
       register_producer->add_option("url", url, localized("url where info about producer can be found"), true);
       register_producer->add_option("location", loc, localized("relative location for purpose of nearest neighbor scheduling"), true);
+      register_producer->add_option("city", city, localized("a city representing a producer"), true);
+      register_producer->add_option("logo", logo, localized("logo representing the producer"), true);
       add_standard_transaction_options(register_producer, "account@active");
-
 
       register_producer->set_callback([this] {
          public_key_type producer_key;
          try {
             producer_key = public_key_type(producer_key_str);
          } EOS_RETHROW_EXCEPTIONS(public_key_type_exception, "Invalid producer public key: ${public_key}", ("public_key", producer_key_str))
-
-         auto regprod_var = regproducer_variant(producer_str, producer_key, url, loc );
+         fc::variant regprod_var = fc::mutable_variant_object()
+                  ("producer", producer_str)
+                  ("producer_key", producer_key)
+                  ("contract", contract_str)
+                  ("transfer_ratio", to_dapp_asset(producer_str, transfer_ratio))
+                  ("url", url)
+                  ("location", loc)
+                  ("city", city)
+                  ("logo_256", logo);
          auto accountPermissions = get_account_permissions(tx_permission, {producer_str,config::active_name});
+         
          send_actions({create_action(accountPermissions, config::system_account_name, N(regproducer), regprod_var)});
       });
    }
 };
+
+// struct update_producer_subcommand {
+//    string producer_str;
+//    string producer_key_str;
+//    string transfer_ratio;
+//    string url;
+//    uint16_t loc = 0;
+
+//    update_producer_subcommand(CLI::App* actionRoot) {
+//       auto update_producer = actionRoot->add_subcommand("updateprod", localized("Update a producer"));
+//       update_producer->add_option("account", producer_str, localized("The account to update as a producer"))->required();
+//       update_producer->add_option("producer_key", producer_key_str, localized("The producer's public key"))->required();
+//       update_producer->add_option("transfer_ratio", transfer_ratio, localized("Percentage of payments per CR."))->required();
+//       update_producer->add_option("url", url, localized("url where info about producer can be found"), true);
+//       update_producer->add_option("location", loc, localized("relative location for purpose of nearest neighbor scheduling"), true);
+//       add_standard_transaction_options(update_producer, "account@active");
+
+
+//       update_producer->set_callback([this] {
+//          public_key_type producer_key;
+//          try {
+//             producer_key = public_key_type(producer_key_str);
+//          } EOS_RETHROW_EXCEPTIONS(public_key_type_exception, "Invalid producer public key: ${public_key}", ("public_key", producer_key_str))
+
+//          auto updateprod_var = updateprod_variant(producer_str, producer_key, transfer_ratio, url, loc );
+//          auto accountPermissions = get_account_permissions(tx_permission, {producer_str,config::active_name});
+//          send_actions({create_action(accountPermissions, config::system_account_name, N(updateprod), updateprod_var)});
+//       });
+//    }
+// };
 
 struct create_account_subcommand {
    string creator;
@@ -1079,6 +1151,29 @@ struct unregister_producer_subcommand {
 
          auto accountPermissions = get_account_permissions(tx_permission, {producer_str,config::active_name});
          send_actions({create_action(accountPermissions, config::system_account_name, N(unregprod), act_payload)});
+      });
+   }
+};
+
+struct change_token_subcommand {
+   string producer_str;
+   string contract_str;
+   string transfer_ratio;
+
+   change_token_subcommand(CLI::App* actionRoot) {
+      auto change_token = actionRoot->add_subcommand("changetoken", localized("change producer dapp token"));
+      change_token->add_option("account", producer_str, localized("The producer's account"))->required();
+      change_token->add_option("contract", contract_str, localized("The producer's dapp token contract"))->required();
+      change_token->add_option("transfer_ratio", transfer_ratio, localized("Percentage of payments per CR."))->required();
+      add_standard_transaction_options(change_token, "account@active");
+
+      change_token->set_callback([this] {
+         fc::variant act_payload = fc::mutable_variant_object()
+                  ("producer", producer_str)
+                  ("contract", contract_str)
+                  ("transfer_ratio", transfer_ratio);
+         auto accountPermissions = get_account_permissions(tx_permission, {producer_str,config::active_name});
+         send_actions({create_action(accountPermissions, config::system_account_name, N(changetoken), act_payload)});
       });
    }
 };
@@ -1232,6 +1327,234 @@ struct unapprove_producer_subcommand {
       });
    }
 };
+
+// struct vote_producer_proxy_subcommand {
+//    string voter_str;
+//    string proxy_str;
+
+//    vote_producer_proxy_subcommand(CLI::App* actionRoot) {
+//       auto vote_proxy = actionRoot->add_subcommand("proxy", localized("Vote your stake through a proxy"));
+//       vote_proxy->add_option("voter", voter_str, localized("The voting account"))->required();
+//       vote_proxy->add_option("proxy", proxy_str, localized("The proxy account"))->required();
+//       add_standard_transaction_options(vote_proxy, "voter@active");
+
+//       vote_proxy->set_callback([this] {
+//          fc::variant act_payload = fc::mutable_variant_object()
+//                   ("voter", voter_str)
+//                   ("proxy", proxy_str)
+//                   ("producers", std::vector<account_name>{});
+//          auto accountPermissions = get_account_permissions(tx_permission, {voter_str,config::active_name});
+//          send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
+//       });
+//    }
+// };
+
+// struct vote_producers_subcommand {
+//    string voter_str;
+//    vector<eosio::name> producer_names;
+
+//    vote_producers_subcommand(CLI::App* actionRoot) {
+//       auto vote_producers = actionRoot->add_subcommand("prods", localized("Vote for one or more producers"));
+//       vote_producers->add_option("voter", voter_str, localized("The voting account"))->required();
+//       vote_producers->add_option("producers", producer_names, localized("The account(s) to vote for. All options from this position and following will be treated as the producer list."))->required();
+//       add_standard_transaction_options(vote_producers, "voter@active");
+
+//       vote_producers->set_callback([this] {
+
+//          std::sort( producer_names.begin(), producer_names.end() );
+
+//          fc::variant act_payload = fc::mutable_variant_object()
+//                   ("voter", voter_str)
+//                   ("proxy", "")
+//                   ("producers", producer_names);
+//          auto accountPermissions = get_account_permissions(tx_permission, {voter_str,config::active_name});
+//          send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
+//       });
+//    }
+// };
+
+//beStage 1
+// struct vote_producer_subcommand {
+//    eosio::name voter_str;
+//    // vector<eosio::name> producer_names;
+//    eosio::name target_producer_name;
+//    string burn_quantity;
+
+//    vote_producer_subcommand(CLI::App* actionRoot) {
+//       auto vote_producer = actionRoot->add_subcommand("voteproducer", localized("Vote for one producer"));
+//       vote_producer->add_option("voter_name", voter_str, localized("The voting account"))->required();
+//       vote_producer->add_option("target_producer", target_producer_name, localized("The account(s) to vote for. All options from this position and following will be treated as the producer."))->required();
+//       vote_producer->add_option("quantity", burn_quantity, localized("burn asset."))->required();
+//       add_standard_transaction_options(vote_producer, "voter@active");
+
+//       vote_producer->set_callback([this] {
+//          fc::variant act_payload = fc::mutable_variant_object()
+//                   ("voter_name", voter_str)
+//                   ("target_producer", target_producer_name)
+//                   ("quantity", to_asset(burn_quantity));
+//          auto accountPermissions = get_account_permissions(tx_permission, {voter_str,config::active_name});
+//          send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
+//       });
+//    }
+// };
+
+struct buyservice_subcommand {
+   string buyer_str;
+   string pay_quantity;
+   eosio::name producer_name;
+
+   buyservice_subcommand(CLI::App* actionRoot) {
+      auto buy_service = actionRoot->add_subcommand("buyservice", localized("Pay for one producers"));
+      buy_service->add_option("buyer", buyer_str, localized("The pay account"))->required();
+      buy_service->add_option("quantity", pay_quantity, localized("pay asset."))->required();
+      buy_service->add_option("producer", producer_name, localized("The account to pay for. All options from this position and following will be treated as the producer list."))->required();
+      add_standard_transaction_options(buy_service, "voter@active");
+      
+      buy_service->set_callback([this] {
+
+         fc::variant act_payload = fc::mutable_variant_object()
+                  ("buyer", buyer_str)
+                  ("quantity", to_asset(pay_quantity))
+                  ("producer", producer_name);
+         auto accountPermissions = get_account_permissions(tx_permission, {buyer_str,config::active_name});
+         send_actions({create_action(accountPermissions, config::system_account_name, N(buyservice), act_payload)});
+      });
+   }
+};
+
+//beStage 2
+
+// struct vote_producers_subcommand {
+//    string voter_str;
+//    string burn_quantity;
+//    vector<eosio::name> producer_names;
+
+//    vote_producers_subcommand(CLI::App* actionRoot) {
+//       auto vote_producers = actionRoot->add_subcommand("voteproducer", localized("Vote for one or more producers"));
+//       vote_producers->add_option("voter_name", voter_str, localized("The voting account"))->required();
+//       vote_producers->add_option("quantity", burn_quantity, localized("burn asset."))->required();
+//       vote_producers->add_option("producers", producer_names, localized("The account(s) to vote for. All options from this position and following will be treated as the producer list."))->required();
+//       add_standard_transaction_options(vote_producers, "voter@active");
+      
+//       vote_producers->set_callback([this] {
+
+//          std::sort( producer_names.begin(), producer_names.end() );
+
+//          fc::variant act_payload = fc::mutable_variant_object()
+//                   ("voter_name", voter_str)
+//                   ("quantity", to_asset(burn_quantity))
+//                   ("producers", producer_names);
+//          auto accountPermissions = get_account_permissions(tx_permission, {voter_str,config::active_name});
+//          send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
+//       });
+//    }
+// };
+
+
+// struct approve_producer_subcommand {
+//    eosio::name voter;
+//    eosio::name producer_name;
+
+//    approve_producer_subcommand(CLI::App* actionRoot) {
+//       auto approve_producer = actionRoot->add_subcommand("approve", localized("Add one producer to list of voted producers"));
+//       approve_producer->add_option("voter", voter, localized("The voting account"))->required();
+//       approve_producer->add_option("producer", producer_name, localized("The account to vote for"))->required();
+//       add_standard_transaction_options(approve_producer, "voter@active");
+
+//       approve_producer->set_callback([this] {
+//             auto result = call(get_table_func, fc::mutable_variant_object("json", true)
+//                                ("code", name(config::system_account_name).to_string())
+//                                ("scope", name(config::system_account_name).to_string())
+//                                ("table", "voters")
+//                                ("table_key", "owner")
+//                                ("lower_bound", voter.value)
+//                                ("upper_bound", voter.value + 1)
+//                                // Less than ideal upper_bound usage preserved so cleos can still work with old buggy nodeos versions
+//                                // Change to voter.value when cleos no longer needs to support nodeos versions older than 1.5.0
+//                                ("limit", 1)
+//             );
+//             auto res = result.as<eosio::chain_apis::read_only::get_table_rows_result>();
+//             // Condition in if statement below can simply be res.rows.empty() when cleos no longer needs to support nodeos versions older than 1.5.0
+//             // Although since this subcommand will actually change the voter's vote, it is probably better to just keep this check to protect
+//             //  against future potential chain_plugin bugs.
+//             if( res.rows.empty() || res.rows[0].get_object()["owner"].as_string() != name(voter).to_string() ) {
+//                std::cerr << "Voter info not found for account " << voter << std::endl;
+//                return;
+//             }
+//             EOS_ASSERT( 1 == res.rows.size(), multiple_voter_info, "More than one voter_info for account" );
+//             auto prod_vars = res.rows[0]["producers"].get_array();
+//             vector<eosio::name> prods;
+//             for ( auto& x : prod_vars ) {
+//                prods.push_back( name(x.as_string()) );
+//             }
+//             prods.push_back( producer_name );
+//             std::sort( prods.begin(), prods.end() );
+//             auto it = std::unique( prods.begin(), prods.end() );
+//             if (it != prods.end() ) {
+//                std::cerr << "Producer \"" << producer_name << "\" is already on the list." << std::endl;
+//                return;
+//             }
+//             fc::variant act_payload = fc::mutable_variant_object()
+//                ("voter", voter)
+//                ("proxy", "")
+//                ("producers", prods);
+//             auto accountPermissions = get_account_permissions(tx_permission, {voter,config::active_name});
+//             send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
+//       });
+//    }
+// };
+
+// struct unapprove_producer_subcommand {
+//    eosio::name voter;
+//    eosio::name producer_name;
+
+//    unapprove_producer_subcommand(CLI::App* actionRoot) {
+//       auto approve_producer = actionRoot->add_subcommand("unapprove", localized("Remove one producer from list of voted producers"));
+//       approve_producer->add_option("voter", voter, localized("The voting account"))->required();
+//       approve_producer->add_option("producer", producer_name, localized("The account to remove from voted producers"))->required();
+//       add_standard_transaction_options(approve_producer, "voter@active");
+
+//       approve_producer->set_callback([this] {
+//             auto result = call(get_table_func, fc::mutable_variant_object("json", true)
+//                                ("code", name(config::system_account_name).to_string())
+//                                ("scope", name(config::system_account_name).to_string())
+//                                ("table", "voters")
+//                                ("table_key", "owner")
+//                                ("lower_bound", voter.value)
+//                                ("upper_bound", voter.value + 1)
+//                                // Less than ideal upper_bound usage preserved so cleos can still work with old buggy nodeos versions
+//                                // Change to voter.value when cleos no longer needs to support nodeos versions older than 1.5.0
+//                                ("limit", 1)
+//             );
+//             auto res = result.as<eosio::chain_apis::read_only::get_table_rows_result>();
+//             // Condition in if statement below can simply be res.rows.empty() when cleos no longer needs to support nodeos versions older than 1.5.0
+//             // Although since this subcommand will actually change the voter's vote, it is probably better to just keep this check to protect
+//             //  against future potential chain_plugin bugs.
+//             if( res.rows.empty() || res.rows[0].get_object()["owner"].as_string() != name(voter).to_string() ) {
+//                std::cerr << "Voter info not found for account " << voter << std::endl;
+//                return;
+//             }
+//             EOS_ASSERT( 1 == res.rows.size(), multiple_voter_info, "More than one voter_info for account" );
+//             auto prod_vars = res.rows[0]["producers"].get_array();
+//             vector<eosio::name> prods;
+//             for ( auto& x : prod_vars ) {
+//                prods.push_back( name(x.as_string()) );
+//             }
+//             auto it = std::remove( prods.begin(), prods.end(), producer_name );
+//             if (it == prods.end() ) {
+//                std::cerr << "Cannot remove: producer \"" << producer_name << "\" is not on the list." << std::endl;
+//                return;
+//             }
+//             prods.erase( it, prods.end() ); //should always delete only one element
+//             fc::variant act_payload = fc::mutable_variant_object()
+//                ("voter", voter)
+//                ("proxy", "")
+//                ("producers", prods);
+//             auto accountPermissions = get_account_permissions(tx_permission, {voter,config::active_name});
+//             send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
+//       });
+//    }
+// };
 
 struct list_producers_subcommand {
    bool print_json = false;
@@ -1418,7 +1741,7 @@ struct bidname_info_subcommand {
       list_producers->add_option("newname", newname, localized("The bidding name"))->required();
       list_producers->set_callback([this] {
          auto rawResult = call(get_table_func, fc::mutable_variant_object("json", true)
-                               ("code", "eosio")("scope", "eosio")("table", "namebids")
+                               ("code", "ecrio")("scope", "ecrio")("table", "namebids")
                                ("lower_bound", newname.value)
                                ("upper_bound", newname.value + 1)
                                // Less than ideal upper_bound usage preserved so cleos can still work with old buggy nodeos versions
@@ -1553,16 +1876,33 @@ struct claimrewards_subcommand {
 
 struct regproxy_subcommand {
    string proxy;
+   string name;
+   string slogan;
+   string philosophy;
+   string background;
+   string website;
+   string logo_256;
 
    regproxy_subcommand(CLI::App* actionRoot) {
       auto register_proxy = actionRoot->add_subcommand("regproxy", localized("Register an account as a proxy (for voting)"));
       register_proxy->add_option("proxy", proxy, localized("The proxy account to register"))->required();
+      register_proxy->add_option("name", name, localized("proxy's human readable name"), true);
+      register_proxy->add_option("slogan", slogan, localized("proxy's short description"), true);
+      register_proxy->add_option("philosophy", philosophy, localized("proxy's voting philosophy"), true);
+      register_proxy->add_option("background", background, localized("who is the proxy?"), true);
+      register_proxy->add_option("website", website, localized("url to website"), true);
+      register_proxy->add_option("logo_256", logo_256, localized("url to an image with the size of 256 x 256 px"), true);
       add_standard_transaction_options(register_proxy, "proxy@active");
 
       register_proxy->set_callback([this] {
          fc::variant act_payload = fc::mutable_variant_object()
                   ("proxy", proxy)
-                  ("isproxy", true);
+                  ("name", true)
+                  ("slogan", true)
+                  ("philosophy", true)
+                  ("background", true)
+                  ("website", true)
+                  ("logo_256", true);
          auto accountPermissions = get_account_permissions(tx_permission, {proxy,config::active_name});
          send_actions({create_action(accountPermissions, config::system_account_name, N(regproxy), act_payload)});
       });
@@ -1579,8 +1919,7 @@ struct unregproxy_subcommand {
 
       unregister_proxy->set_callback([this] {
          fc::variant act_payload = fc::mutable_variant_object()
-                  ("proxy", proxy)
-                  ("isproxy", false);
+                  ("proxy", proxy);
          auto accountPermissions = get_account_permissions(tx_permission, {proxy,config::active_name});
          send_actions({create_action(accountPermissions, config::system_account_name, N(regproxy), act_payload)});
       });
@@ -3019,7 +3358,7 @@ int main( int argc, char** argv ) {
    auto setActionPermission = set_action_permission_subcommand(setAction);
 
    // Transfer subcommand
-   string con = "eosio.token";
+   string con = "ecrio.token";
    string sender;
    string recipient;
    string amount;
@@ -3442,7 +3781,7 @@ int main( int argc, char** argv ) {
          ("requested", requested_perm_var)
          ("trx", trx_var);
 
-      send_actions({chain::action{accountPermissions, "eosio.msig", "propose", variant_to_bin( N(eosio.msig), N(propose), args ) }});
+      send_actions({chain::action{accountPermissions, "ecrio.msig", "propose", variant_to_bin( N(ecrio.msig), N(propose), args ) }});
    });
 
    //multisig propose transaction
@@ -3482,7 +3821,7 @@ int main( int argc, char** argv ) {
          ("requested", requested_perm_var)
          ("trx", trx_var);
 
-      send_actions({chain::action{accountPermissions, "eosio.msig", "propose", variant_to_bin( N(eosio.msig), N(propose), args ) }});
+      send_actions({chain::action{accountPermissions, "ecrio.msig", "propose", variant_to_bin( N(ecrio.msig), N(propose), args ) }});
    });
 
 
@@ -3495,7 +3834,7 @@ int main( int argc, char** argv ) {
 
    review->set_callback([&] {
       const auto result1 = call(get_table_func, fc::mutable_variant_object("json", true)
-                                 ("code", "eosio.msig")
+                                 ("code", "ecrio.msig")
                                  ("scope", proposer)
                                  ("table", "proposal")
                                  ("table_key", "")
@@ -3531,7 +3870,7 @@ int main( int argc, char** argv ) {
 
          try {
             const auto& result2 = call(get_table_func, fc::mutable_variant_object("json", true)
-                                       ("code", "eosio.msig")
+                                       ("code", "ecrio.msig")
                                        ("scope", proposer)
                                        ("table", "approvals2")
                                        ("table_key", "")
@@ -3563,7 +3902,7 @@ int main( int argc, char** argv ) {
             }
          } else {
             const auto result3 = call(get_table_func, fc::mutable_variant_object("json", true)
-                                       ("code", "eosio.msig")
+                                       ("code", "ecrio.msig")
                                        ("scope", proposer)
                                        ("table", "approvals")
                                        ("table_key", "")
@@ -3596,8 +3935,8 @@ int main( int argc, char** argv ) {
          if( new_multisig ) {
             for( auto& a : provided_approvers ) {
                const auto result4 = call(get_table_func, fc::mutable_variant_object("json", true)
-                                          ("code", "eosio.msig")
-                                          ("scope", "eosio.msig")
+                                          ("code", "ecrio.msig")
+                                          ("scope", "ecrio.msig")
                                           ("table", "invals")
                                           ("table_key", "")
                                           ("lower_bound", a.first.value)
@@ -3702,7 +4041,7 @@ int main( int argc, char** argv ) {
       }
 
       auto accountPermissions = get_account_permissions(tx_permission, {proposer,config::active_name});
-      send_actions({chain::action{accountPermissions, "eosio.msig", action, variant_to_bin( N(eosio.msig), action, args ) }});
+      send_actions({chain::action{accountPermissions, "ecrio.msig", action, variant_to_bin( N(ecrio.msig), action, args ) }});
    };
 
    // multisig approve
@@ -3732,7 +4071,7 @@ int main( int argc, char** argv ) {
          ("account", invalidator);
 
       auto accountPermissions = get_account_permissions(tx_permission, {invalidator,config::active_name});
-      send_actions({chain::action{accountPermissions, "eosio.msig", "invalidate", variant_to_bin( N(eosio.msig), "invalidate", args ) }});
+      send_actions({chain::action{accountPermissions, "ecrio.msig", "invalidate", variant_to_bin( N(ecrio.msig), "invalidate", args ) }});
    });
 
    // multisig cancel
@@ -3759,7 +4098,7 @@ int main( int argc, char** argv ) {
          ("proposal_name", proposal_name)
          ("canceler", canceler);
 
-      send_actions({chain::action{accountPermissions, "eosio.msig", "cancel", variant_to_bin( N(eosio.msig), N(cancel), args ) }});
+      send_actions({chain::action{accountPermissions, "ecrio.msig", "cancel", variant_to_bin( N(ecrio.msig), N(cancel), args ) }});
       }
    );
 
@@ -3788,7 +4127,7 @@ int main( int argc, char** argv ) {
          ("proposal_name", proposal_name)
          ("executer", executer);
 
-      send_actions({chain::action{accountPermissions, "eosio.msig", "exec", variant_to_bin( N(eosio.msig), N(exec), args ) }});
+      send_actions({chain::action{accountPermissions, "ecrio.msig", "exec", variant_to_bin( N(ecrio.msig), N(exec), args ) }});
       }
    );
 
@@ -3797,7 +4136,7 @@ int main( int argc, char** argv ) {
    wrap->require_subcommand();
 
    // wrap exec
-   string wrap_con = "eosio.wrap";
+   string wrap_con = "ecrio.wrap";
    executer = "";
    string trx_to_exec;
    auto wrap_exec = wrap->add_subcommand("exec", localized("Execute a transaction while bypassing authorization checks"));
@@ -3825,12 +4164,15 @@ int main( int argc, char** argv ) {
    });
 
    // system subcommand
-   auto system = app.add_subcommand("system", localized("Send eosio.system contract action to the blockchain."), false);
+   auto system = app.add_subcommand("system", localized("Send ecrio.system contract action to the blockchain."), false);
    system->require_subcommand();
 
    auto createAccountSystem = create_account_subcommand( system, false /*simple*/ );
+
    auto registerProducer = register_producer_subcommand(system);
+   // auto updateProducer = update_producer_subcommand(system);
    auto unregisterProducer = unregister_producer_subcommand(system);
+   auto changetoken = change_token_subcommand(system);
 
    auto voteProducer = system->add_subcommand("voteproducer", localized("Vote for a producer"));
    voteProducer->require_subcommand();
@@ -3838,6 +4180,16 @@ int main( int argc, char** argv ) {
    auto voteProducers = vote_producers_subcommand(voteProducer);
    auto approveProducer = approve_producer_subcommand(voteProducer);
    auto unapproveProducer = unapprove_producer_subcommand(voteProducer);
+
+   auto buyService = buyservice_subcommand(system);
+   // auto voteProducers = vote_producers_subcommand(system);
+   // auto voteProducer = vote_producer_subcommand(system);
+   // auto voteProducer = system->add_subcommand("voteproducer", localized("Vote for a producer"));
+   // voteProducer->require_subcommand();
+   // auto voteProxy = vote_producer_proxy_subcommand(voteProducer);
+   // auto voteProducers = vote_producers_subcommand(voteProducer);
+   // auto approveProducer = approve_producer_subcommand(voteProducer);
+   // auto unapproveProducer = unapprove_producer_subcommand(voteProducer);
 
    auto listProducers = list_producers_subcommand(system);
 
