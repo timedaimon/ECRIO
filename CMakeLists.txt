@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.5 )
 
-project( EOSIO )
+project( ECRIO )
 
 enable_testing()
 
@@ -24,7 +24,7 @@ include( SetupTargetMacros )
 include( InstallDirectoryPermissions )
 include( MASSigning )
 
-set( BLOCKCHAIN_NAME "EOSIO" )
+set( BLOCKCHAIN_NAME "ECRIO" )
 set( CMAKE_CXX_STANDARD 14 )
 set( CMAKE_CXX_EXTENSIONS ON )
 set( CXX_STANDARD_REQUIRED ON)
@@ -209,11 +209,23 @@ endif()
 
 message( STATUS "Using '${CORE_SYMBOL_NAME}' as CORE symbol name" )
 
-if ("${EOSIO_ROOT_KEY}" STREQUAL "")
-   set(EOSIO_ROOT_KEY "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV")
+if ("${SYSTEM_ACCOUNT_ROOT_KEY}" STREQUAL "")
+   set(SYSTEM_ACCOUNT_ROOT_KEY "EOS8J4bijk4uiZakKiWsB56AvvKCEiWuQ8LVs3Gcryd74xchymoiJ")
 endif()
 
-message( STATUS "Using '${EOSIO_ROOT_KEY}' as public key for 'eosio' account" )
+message( STATUS "Using '${SYSTEM_ACCOUNT_ROOT_KEY}' as public key for system root account" )
+
+if ("${CHAIN_INIT_TIMESTAMP}" STREQUAL "")
+    set(CHAIN_INIT_TIMESTAMP "2019-03-27T00:00:00")
+endif()
+
+message( STATUS "Using '${CHAIN_INIT_TIMESTAMP}' as chain init timestamp" )
+
+if ("${ROOT_ACCOUNT}" STREQUAL "")
+    set(ROOT_ACCOUNT "ecrio")
+endif()
+
+message( STATUS "Using '${ROOT_ACCOUNT}' as root account" )
 
 add_subdirectory( libraries )
 add_subdirectory( plugins )
