@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 load helpers/general
 
-SCRIPT_LOCATION="scripts/eosio_build.sh"
+SCRIPT_LOCATION="scripts/ecrio_build.sh"
 TEST_LABEL="[eosio_build]"
 
 ###################################################################
