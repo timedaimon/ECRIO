@@ -279,7 +279,7 @@ BOOST_FIXTURE_TEST_CASE( bootseq_test, bootseq_tester ) {
 
         // Total Stakes = b1 + whale2 + whale3 stake = (100,000,000 - 1,000) + (20,000,000 - 1,000) + (30,000,000 - 1,000)
         vector<char> data = get_row_by_account( config::system_account_name, config::system_account_name, N(global), N(global) );
-        
+
         BOOST_TEST(get_global_state()["total_activated_stake"].as<int64_t>() == 1499999997000);
 
         // No producers will be set, since the total activated stake is less than 150,000,000
