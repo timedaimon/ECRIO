@@ -1536,19 +1536,19 @@ class Node(object):
                     break
         return protocolFeatures
 
-    # Require PREACTIVATE_FEATURE to be activated and require eosio.bios with preactivate_feature
+    # Require PREACTIVATE_FEATURE to be activated and require ecrio.bios with preactivate_feature
     def preactivateProtocolFeatures(self, featureDigests:list):
         for digest in featureDigests:
             Utils.Print("push activate action with digest {}".format(digest))
             data="{{\"feature_digest\":{}}}".format(digest)
-            opts="--permission eosio@active"
-            trans=self.pushMessage("eosio", "activate", data, opts)
+            opts="--permission ecrio@active"
+            trans=self.pushMessage("ecrio", "activate", data, opts)
             if trans is None or not trans[0]:
                 Utils.Print("ERROR: Failed to preactive digest {}".format(digest))
                 return None
         self.waitForHeadToAdvance()
 
-    # Require PREACTIVATE_FEATURE to be activated and require eosio.bios with preactivate_feature
+    # Require PREACTIVATE_FEATURE to be activated and require ecrio.bios with preactivate_feature
     def preactivateAllBuiltinProtocolFeature(self):
         allBuiltinProtocolFeatureDigests = self.getAllBuiltinFeatureDigestsToPreactivate()
         self.preactivateProtocolFeatures(allBuiltinProtocolFeatureDigests)
