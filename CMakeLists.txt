@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.5 )
 
-project( ECRIO )
+project( LGSIO )
 
 enable_testing()
 
@@ -24,7 +24,7 @@ include( SetupTargetMacros )
 include( InstallDirectoryPermissions )
 include( MASSigning )
 
-set( BLOCKCHAIN_NAME "ECRIO" )
+set( BLOCKCHAIN_NAME "LGSIO" )
 set( CMAKE_CXX_STANDARD 14 )
 set( CMAKE_CXX_EXTENSIONS ON )
 set( CXX_STANDARD_REQUIRED ON)
@@ -222,7 +222,7 @@ endif()
 message( STATUS "Using '${CHAIN_INIT_TIMESTAMP}' as chain init timestamp" )
 
 if ("${ROOT_ACCOUNT}" STREQUAL "")
-    set(ROOT_ACCOUNT "ecrio")
+    set(ROOT_ACCOUNT "lgsio")
 endif()
 
 message( STATUS "Using '${ROOT_ACCOUNT}' as root account" )

@@ -56,7 +56,7 @@ wcmd () {
 }
 
 cacmd () {
-    programs/cleos/cleos  --wallet-url $wdurl --url http://$bioshost:$biosport system newaccount --transfer --stake-net "10000000.0000 SYS" --stake-cpu "10000000.0000 SYS"  --buy-ram "10000000.0000 SYS" ecrio $* >> $logfile 2>&1
+    programs/cleos/cleos  --wallet-url $wdurl --url http://$bioshost:$biosport system newaccount --transfer --stake-net "10000000.0000 SYS" --stake-cpu "10000000.0000 SYS"  --buy-ram "10000000.0000 SYS" lgsio $* >> $logfile 2>&1
     ecmd system regproducer $1 $2
     ecmd system voteproducer prods $1 $1
 }
@@ -75,40 +75,40 @@ wcmd create --to-console -n ignition
 # ------ DO NOT ALTER THE NEXT LINE -------
 ###INSERT prodkeys
 
-ecmd set contract ecrio unittests/contracts/ecrio.bios ecrio.bios.wasm ecrio.bios.abi
+ecmd set contract lgsio unittests/contracts/lgsio.bios lgsio.bios.wasm lgsio.bios.abi
 
 # Create required system accounts
 ecmd create key --to-console
 pubsyskey=`grep "^Public key:" $logfile | tail -1 | sed "s/^Public key://"`
 prisyskey=`grep "^Private key:" $logfile | tail -1 | sed "s/^Private key://"`
-echo ecrio.* keys: $prisyskey $pubsyskey >> $logfile
+echo lgsio.* keys: $prisyskey $pubsyskey >> $logfile
 wcmd import -n ignition --private-key $prisyskey
-ecmd create account ecrio ecrio.bpay $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.msig $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.names $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.ram $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.ramfee $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.saving $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.stake $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.token $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.vpay $pubsyskey $pubsyskey
-ecmd create account ecrio ecrio.wrap $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.bpay $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.msig $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.names $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.ram $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.ramfee $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.saving $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.stake $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.token $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.vpay $pubsyskey $pubsyskey
+ecmd create account lgsio lgsio.wrap $pubsyskey $pubsyskey
 
-ecmd set contract ecrio.token unittests/contracts/ecrio.token ecrio.token.wasm ecrio.token.abi
-ecmd set contract ecrio.msig unittests/contracts/ecrio.msig ecrio.msig.wasm ecrio.msig.abi
-ecmd set contract ecrio.wrap unittests/contracts/ecrio.wrap ecrio.wrap.wasm ecrio.wrap.abi
+ecmd set contract lgsio.token unittests/contracts/lgsio.token lgsio.token.wasm lgsio.token.abi
+ecmd set contract lgsio.msig unittests/contracts/lgsio.msig lgsio.msig.wasm lgsio.msig.abi
+ecmd set contract lgsio.wrap unittests/contracts/lgsio.wrap lgsio.wrap.wasm lgsio.wrap.abi
 
 echo ===== Start: $step ============ >> $logfile
-echo executing: cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action ecrio.token create '[ "ecrio", "10000000000.0000 SYS" ]' -p ecrio.token | tee -a $logfile
-echo executing: cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action ecrio.token issue '[ "ecrio", "1000000000.0000 SYS", "memo" ]' -p ecrio | tee -a $logfile
+echo executing: cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action lgsio.token create '[ "lgsio", "10000000000.0000 SYS" ]' -p lgsio.token | tee -a $logfile
+echo executing: cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action lgsio.token issue '[ "lgsio", "1000000000.0000 SYS", "memo" ]' -p lgsio | tee -a $logfile
 echo ----------------------- >> $logfile
-programs/cleos/cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action ecrio.token create '[ "ecrio", "10000000000.0000 SYS" ]' -p ecrio.token >> $logfile 2>&1
-programs/cleos/cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action ecrio.token issue '[ "ecrio", "1000000000.0000 SYS", "memo" ]' -p ecrio >> $logfile 2>&1
+programs/cleos/cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action lgsio.token create '[ "lgsio", "10000000000.0000 SYS" ]' -p lgsio.token >> $logfile 2>&1
+programs/cleos/cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action lgsio.token issue '[ "lgsio", "1000000000.0000 SYS", "memo" ]' -p lgsio >> $logfile 2>&1
 echo ==== End: $step ============== >> $logfile
 step=$(($step + 1))
 
-ecmd set contract ecrio unittests/contracts/ecrio.system ecrio.system.wasm ecrio.system.abi
-programs/cleos/cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action ecrio init '[0, "4,SYS"]' -p ecrio >> $logfile 2>&1
+ecmd set contract lgsio unittests/contracts/lgsio.system lgsio.system.wasm lgsio.system.abi
+programs/cleos/cleos --wallet-url $wdurl --url http://$bioshost:$biosport push action lgsio init '[0, "4,SYS"]' -p lgsio >> $logfile 2>&1
 
 # Manual deployers, add a series of lines below this block that looks like:
 #    cacmd $PRODNAME[0] $OWNERKEY[0] $ACTIVEKEY[0]

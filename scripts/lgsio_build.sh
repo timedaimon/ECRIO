@@ -134,7 +134,7 @@ fi
 
 if [ ! -d "${REPO_ROOT}/.git" ]; then
    printf "\\nThis build script only works with sources cloned from git\\n"
-   printf "Please clone a new ecrio directory with 'git clone https://github.com/ibct-dev/ecrio --recursive'\\n"
+   printf "Please clone a new lgsio directory with 'git clone https://github.com/ibct-dev/lgsio --recursive'\\n"
    # printf "See the wiki for instructions: https://github.com/EOSIO/eos/wiki\\n"
    exit 1
 fi
@@ -166,7 +166,7 @@ if [ "$ARCH" == "Linux" ]; then
    export OS_NAME=$(cat /etc/os-release | grep ^NAME | cut -d'=' -f2 | sed 's/\"//gI')
    OPENSSL_ROOT_DIR=/usr/include/openssl
    if [ ! -e /etc/os-release ]; then
-      printf "\\nECRIO currently supports Amazon, Centos, Fedora, Mint & Ubuntu Linux only.\\n"
+      printf "\\nLGSIO currently supports Amazon, Centos, Fedora, Mint & Ubuntu Linux only.\\n"
       printf "Please install on the latest version of one of these Linux distributions.\\n"
       printf "https://aws.amazon.com/amazon-linux-ami/\\n"
       printf "https://www.centos.org/\\n"
@@ -244,7 +244,7 @@ pushd $SRC_LOCATION &>/dev/null
 popd &>/dev/null
 
 printf "\\n========================================================================\\n"
-printf "======================= Starting ECRIO Build =======================\\n"
+printf "======================= Starting LGSIO Build =======================\\n"
 printf "## CMAKE_BUILD_TYPE=%s\\n" "${CMAKE_BUILD_TYPE}"
 printf "## ENABLE_COVERAGE_TESTING=%s\\n" "${ENABLE_COVERAGE_TESTING}"
 
@@ -274,7 +274,7 @@ printf "\t███████╗╚██████╗██║  ██║�
 printf "\t╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝ ╚═════╝ \n"
 printf "${txtrst}"
 
-printf "\\nECRIO has been successfully built. %02d:%02d:%02d\\n" $(($TIME_END / 3600)) $(($TIME_END % 3600 / 60)) $(($TIME_END % 60))
+printf "\\nLGSIO has been successfully built. %02d:%02d:%02d\\n" $(($TIME_END / 3600)) $(($TIME_END % 3600 / 60)) $(($TIME_END % 60))
 printf "==============================================================================================\\n${bldred}"
 printf "(Optional) Testing Instructions:\\n"
 print_instructions

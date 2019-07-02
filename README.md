@@ -1,21 +1,21 @@
+# LGSIO - EOS chrome infrastructure
 
-# ECRIO - EOS chrome infrastructure
+#### LGSIO Setting
 
-#### ECRIO Setting
 ```sh
-$ git clone https://github.com/eoschrome/ECRIO --recursive
-$ cd ECRIO/scripts
-$ sudo ./ecrio_build -s "SYSTEM TOKEN NAME"
-$ sudo ./ecrio_install
+$ git clone https://github.com/ibct-dev/LGSIO --recursive
+$ cd LGSIO/scripts
+$ sudo ./lgsio_build -s "SYSTEM TOKEN NAME"
+$ sudo ./lgsio_install
 
 ## Supported Operating Systems
-ECRIO currently supports the following operating systems:  
+LGSIO currently supports the following operating systems:
 1. Amazon 2017.09 and higher
 2. Centos 7
 
 ```
 
-#### ECRIO features
+#### LGSIO features
 
 1. Free Rate Limited Transactions
 2. Low Latency Block confirmation (0.5 seconds)
@@ -26,7 +26,7 @@ ECRIO currently supports the following operating systems:
 7. Scheduled Recurring Transactions
 8. Time Delay Security
 9. Hierarchical Role Based Permissions
-10. Support for Biometric Hardware Secured Keys (e.g. Apple Secure Enclave) 
+10. Support for Biometric Hardware Secured Keys (e.g. Apple Secure Enclave)
 11. Designed for Parallel Execution of Context Free Validation Logic
 12. Designed for Inter Blockchain Communication
 

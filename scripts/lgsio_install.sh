@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ##########################################################################
-# This is the ECRIO automated install script for Linux and Mac OS.
-# This file was downloaded from https://github.com/EOSCHROME/ECRIO
+# This is the LGSIO automated install script for Linux and Mac OS.
+# This file was downloaded from https://github.com/EOSCHROME/LGSIO
 # Modified version of: https://github.com/EOSIO/EOS
 #
 # Original work Copyright (c) 2017, Respective Authors all rights reserved.
@@ -51,7 +51,7 @@ bldred=${txtbld}$(tput setaf 1)
 txtrst=$(tput sgr0)
 
 if [ ! -d $BUILD_DIR ]; then
-    printf "\\nError, ecrio_build.sh has not ran.  Please run ./ecrio_build.sh first!\\n\\n"
+    printf "\\nError, lgsio_build.sh has not ran.  Please run ./lgsio_build.sh first!\\n\\n"
     exit -1
 fi
 
@@ -61,7 +61,7 @@ if ! pushd "${BUILD_DIR}" &>/dev/null; then
 fi
 
 if ! make install; then
-    printf "\\nMAKE installing ECRIO has exited with the above error.\\n\\n"
+    printf "\\nMAKE installing LGSIO has exited with the above error.\\n\\n"
     exit -1
 fi
 popd &>/dev/null
@@ -76,8 +76,8 @@ printf "\t╚══════╝ ╚═════╝╚═╝  ╚═╝╚�
 printf "${txtrst}"
 
 printf "==============================================================================================\\n"
-printf "ECRIO has been installed into ${OPT_LOCATION}/eosio/bin!\\n"
-printf "If you need to, you can fully uninstall using ecrio_uninstall.sh\\n"
+printf "LGSIO has been installed into ${OPT_LOCATION}/eosio/bin!\\n"
+printf "If you need to, you can fully uninstall using lgsio_uninstall.sh\\n"
 printf "==============================================================================================\\n\\n"
 
 printf "EOS Chrome website: https://kr.eoschrome.io\\n"

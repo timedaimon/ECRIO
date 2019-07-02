@@ -30,11 +30,11 @@ namespace eosio {
    namespace testing {
       struct contracts {
          // Contracts in `eos/unittests/contracts' directory
-         MAKE_READ_WASM_ABI(ecrio_bios,   ecrio.bios, contracts)
-         MAKE_READ_WASM_ABI(ecrio_msig,   ecrio.msig, contracts)
-         MAKE_READ_WASM_ABI(ecrio_system, ecrio.system, contracts)
-         MAKE_READ_WASM_ABI(ecrio_token,  ecrio.token,  contracts)
-         MAKE_READ_WASM_ABI(ecrio_wrap,   ecrio.wrap,   contracts)
+         MAKE_READ_WASM_ABI(lgsio_bios,   lgsio.bios, contracts)
+         MAKE_READ_WASM_ABI(lgsio_msig,   lgsio.msig, contracts)
+         MAKE_READ_WASM_ABI(lgsio_system, lgsio.system, contracts)
+         MAKE_READ_WASM_ABI(lgsio_token,  lgsio.token,  contracts)
+         MAKE_READ_WASM_ABI(lgsio_wrap,   lgsio.wrap,   contracts)
 
          // Contracts in `eos/unittests/unittests/test-contracts' directory
          MAKE_READ_WASM_ABI(asserter,             asserter,             test-contracts)
