@@ -941,8 +941,8 @@ namespace eosio { namespace testing {
    }
 
    void base_tester::set_before_preactivate_bios_contract() {
-      set_code(config::system_account_name, contracts::before_preactivate_ecrio_bios_wasm());
-      set_abi(config::system_account_name, contracts::before_preactivate_ecrio_bios_abi().data());
+      set_code(config::system_account_name, contracts::before_preactivate_eosio_bios_wasm());
+      set_abi(config::system_account_name, contracts::before_preactivate_eosio_bios_abi().data());
    }
 
    void base_tester::set_bios_contract() {
