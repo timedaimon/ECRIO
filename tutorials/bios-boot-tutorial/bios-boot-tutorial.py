@@ -14,18 +14,18 @@ args = None
 logFile = None
 
 unlockTimeout = 999999999
-fastUnstakeSystem = './fast.refund/ecrio.system/ecrio.system.wasm'
+fastUnstakeSystem = './fast.refund/lgsio.system/lgsio.system.wasm'
 
 systemAccounts = [
-    'ecrio.bpay',
-    'ecrio.msig',
-    'ecrio.names',
-    'ecrio.ram',
-    'ecrio.ramfee',
-    'ecrio.saving',
-    'ecrio.stake',
-    'ecrio.token',
-    'ecrio.vpay',
+    'lgsio.bpay',
+    'lgsio.msig',
+    'lgsio.names',
+    'lgsio.ram',
+    'lgsio.ramfee',
+    'lgsio.saving',
+    'lgsio.stake',
+    'lgsio.token',
+    'lgsio.vpay',
 ]
 
 def jsonArg(a):
@@ -129,7 +129,7 @@ def startProducers(b, e):
 
 def createSystemAccounts():
     for a in systemAccounts:
-        run(args.cleos + 'create account ecrio ' + a + ' ' + args.public_key)
+        run(args.cleos + 'create account lgsio ' + a + ' ' + args.public_key)
 
 def intToCurrency(i):
     return '%d.%04d %s' % (i // 10000, i % 10000, args.symbol)
@@ -168,10 +168,10 @@ def createStakedAccounts(b, e):
         stakeCpu = stake - stakeNet
         print('%s: total funds=%s, ram=%s, net=%s, cpu=%s, unstaked=%s' % (a['name'], intToCurrency(a['funds']), intToCurrency(ramFunds), intToCurrency(stakeNet), intToCurrency(stakeCpu), intToCurrency(unstaked)))
         assert(funds == ramFunds + stakeNet + stakeCpu + unstaked)
-        retry(args.cleos + 'system newaccount --transfer ecrio %s %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
+        retry(args.cleos + 'system newaccount --transfer lgsio %s %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
             (a['name'], a['pub'], intToCurrency(stakeNet), intToCurrency(stakeCpu), intToCurrency(ramFunds)))
         if unstaked:
-            retry(args.cleos + 'transfer ecrio %s "%s"' % (a['name'], intToCurrency(unstaked)))
+            retry(args.cleos + 'transfer lgsio %s "%s"' % (a['name'], intToCurrency(unstaked)))
 
 def regProducers(b, e):
     for i in range(b, e):
@@ -192,7 +192,7 @@ def vote(b, e):
         retry(args.cleos + 'system voteproducer prods ' + voter + ' ' + prods)
 
 def claimRewards():
-    table = getJsonOutput(args.cleos + 'get table ecrio ecrio producers -l 100')
+    table = getJsonOutput(args.cleos + 'get table lgsio lgsio producers -l 100')
     times = []
     for row in table['rows']:
         if row['unpaid_blocks'] and not row['last_claim_time']:
@@ -209,7 +209,7 @@ def proxyVotes(b, e):
         retry(args.cleos + 'system voteproducer proxy ' + voter + ' ' + proxy)
 
 def updateAuth(account, permission, parent, controller):
-    run(args.cleos + 'push action ecrio updateauth' + jsonArg({
+    run(args.cleos + 'push action lgsio updateauth' + jsonArg({
         'account': account,
         'permission': permission,
         'parent': parent,
@@ -240,11 +240,11 @@ def msigProposeReplaceSystem(proposer, proposalName):
     requestedPermissions = []
     for i in range(firstProducer, firstProducer + numProducers):
         requestedPermissions.append({'actor': accounts[i]['name'], 'permission': 'active'})
-    trxPermissions = [{'actor': 'ecrio', 'permission': 'active'}]
+    trxPermissions = [{'actor': 'lgsio', 'permission': 'active'}]
     with open(fastUnstakeSystem, mode='rb') as f:
-        setcode = {'account': 'ecrio', 'vmtype': 0, 'vmversion': 0, 'code': f.read().hex()}
+        setcode = {'account': 'lgsio', 'vmtype': 0, 'vmversion': 0, 'code': f.read().hex()}
     run(args.cleos + 'multisig propose ' + proposalName + jsonArg(requestedPermissions) + 
-        jsonArg(trxPermissions) + 'ecrio setcode' + jsonArg(setcode) + ' -p ' + proposer)
+        jsonArg(trxPermissions) + 'lgsio setcode' + jsonArg(setcode) + ' -p ' + proposer)
 
 def msigApproveReplaceSystem(proposer, proposalName):
     for i in range(firstProducer, firstProducer + numProducers):
@@ -256,7 +256,7 @@ def msigExecReplaceSystem(proposer, proposalName):
     retry(args.cleos + 'multisig exec ' + proposer + ' ' + proposalName + ' -p ' + proposer)
 
 def msigReplaceSystem():
-    run(args.cleos + 'push action ecrio buyrambytes' + jsonArg(['ecrio', accounts[0]['name'], 200000]) + '-p ecrio')
+    run(args.cleos + 'push action lgsio buyrambytes' + jsonArg(['lgsio', accounts[0]['name'], 200000]) + '-p lgsio')
     sleep(1)
     msigProposeReplaceSystem(accounts[0]['name'], 'fast.unstake')
     sleep(1)
@@ -281,22 +281,22 @@ def stepStartWallet():
     startWallet()
     importKeys()
 def stepStartBoot():
-    startNode(0, {'name': 'ecrio', 'pvt': args.private_key, 'pub': args.public_key})
+    startNode(0, {'name': 'lgsio', 'pvt': args.private_key, 'pub': args.public_key})
     sleep(1.5)
 def stepInstallSystemContracts():
-    run(args.cleos + 'set contract ecrio.token ' + args.contracts_dir + '/ecrio.token/')
-    run(args.cleos + 'set contract ecrio.msig ' + args.contracts_dir + '/ecrio.msig/')
+    run(args.cleos + 'set contract lgsio.token ' + args.contracts_dir + '/lgsio.token/')
+    run(args.cleos + 'set contract lgsio.msig ' + args.contracts_dir + '/lgsio.msig/')
 def stepCreateTokens():
-    run(args.cleos + 'push action ecrio.token create \'["ecrio", "10000000000.0000 %s"]\' -p ecrio.token' % (args.symbol))
+    run(args.cleos + 'push action lgsio.token create \'["lgsio", "10000000000.0000 %s"]\' -p lgsio.token' % (args.symbol))
     totalAllocation = allocateFunds(0, len(accounts))
-    run(args.cleos + 'push action ecrio.token issue \'["ecrio", "%s", "memo"]\' -p ecrio' % intToCurrency(totalAllocation))
+    run(args.cleos + 'push action lgsio.token issue \'["lgsio", "%s", "memo"]\' -p lgsio' % intToCurrency(totalAllocation))
     sleep(1)
 def stepSetSystemContract():
-    retry(args.cleos + 'set contract ecrio ' + args.contracts_dir + '/ecrio.system/')
+    retry(args.cleos + 'set contract lgsio ' + args.contracts_dir + '/lgsio.system/')
     sleep(1)
-    run(args.cleos + 'push action ecrio setpriv' + jsonArg(['ecrio.msig', 1]) + '-p ecrio@active')
+    run(args.cleos + 'push action lgsio setpriv' + jsonArg(['lgsio.msig', 1]) + '-p lgsio@active')
 def stepInitSystemContract():
-    run(args.cleos + 'push action ecrio init' + jsonArg(['0', '4,SYS']) + '-p ecrio@active')
+    run(args.cleos + 'push action lgsio init' + jsonArg(['0', '4,SYS']) + '-p lgsio@active')
     sleep(1)
 def stepCreateStakedAccounts():
     createStakedAccounts(0, len(accounts))
@@ -315,9 +315,9 @@ def stepVote():
 def stepProxyVotes():
     proxyVotes(0, 0 + args.num_voters)
 def stepResign():
-    resign('ecrio', 'ecrio.prods')
+    resign('lgsio', 'lgsio.prods')
     for a in systemAccounts:
-        resign(a, 'ecrio')
+        resign(a, 'lgsio')
 def stepTransfer():
     while True:
         randomTransfer(0, args.num_senders)
@@ -332,7 +332,7 @@ commands = [
     ('k', 'kill',               stepKillAll,                True,    "Kill all nodeos and keosd processes"),
     ('w', 'wallet',             stepStartWallet,            True,    "Start keosd, create wallet, fill with keys"),
     ('b', 'boot',               stepStartBoot,              True,    "Start boot node"),
-    ('s', 'sys',                createSystemAccounts,       True,    "Create system accounts (ecrio.*)"),
+    ('s', 'sys',                createSystemAccounts,       True,    "Create system accounts (lgsio.*)"),
     ('c', 'contracts',          stepInstallSystemContracts, True,    "Install system contracts (token, msig)"),
     ('t', 'tokens',             stepCreateTokens,           True,    "Create tokens"),
     ('S', 'sys-contract',       stepSetSystemContract,      True,    "Set system contract"),
@@ -343,14 +343,14 @@ commands = [
     ('v', 'vote',               stepVote,                   True,    "Vote for producers"),
     ('R', 'claim',              claimRewards,               True,    "Claim rewards"),
     ('x', 'proxy',              stepProxyVotes,             True,    "Proxy votes"),
-    ('q', 'resign',             stepResign,                 True,    "Resign ecrio"),
+    ('q', 'resign',             stepResign,                 True,    "Resign lgsio"),
     ('m', 'msg-replace',        msigReplaceSystem,          False,   "Replace system contract using msig"),
     ('X', 'xfer',               stepTransfer,               False,   "Random transfer tokens (infinite loop)"),
     ('l', 'log',                stepLog,                    True,    "Show tail of node's log"),
 ]
 
-parser.add_argument('--public-key', metavar='', help="ECRIO Public Key", default='EOS8Znrtgwt8TfpmbVpTKvA2oB8Nqey625CLN8bCN3TEbgx86Dsvr', dest="public_key")
-parser.add_argument('--private-Key', metavar='', help="ECRIO Private Key", default='5K463ynhZoCDDa4RDcr63cUwWLTnKqmdcoTKTHBjqoKfv4u5V7p', dest="private_key")
+parser.add_argument('--public-key', metavar='', help="lgsio Public Key", default='EOS8Znrtgwt8TfpmbVpTKvA2oB8Nqey625CLN8bCN3TEbgx86Dsvr', dest="public_key")
+parser.add_argument('--private-Key', metavar='', help="lgsio Private Key", default='5K463ynhZoCDDa4RDcr63cUwWLTnKqmdcoTKTHBjqoKfv4u5V7p', dest="private_key")
 parser.add_argument('--cleos', metavar='', help="Cleos command", default='../../build/programs/cleos/cleos --wallet-url http://127.0.0.1:6666 ')
 parser.add_argument('--nodeos', metavar='', help="Path to nodeos binary", default='../../build/programs/nodeos/nodeos')
 parser.add_argument('--keosd', metavar='', help="Path to keosd binary", default='../../build/programs/keosd/keosd')
@@ -359,7 +359,7 @@ parser.add_argument('--nodes-dir', metavar='', help="Path to nodes directory", d
 parser.add_argument('--genesis', metavar='', help="Path to genesis.json", default="./genesis.json")
 parser.add_argument('--wallet-dir', metavar='', help="Path to wallet directory", default='./wallet/')
 parser.add_argument('--log-path', metavar='', help="Path to log file", default='./output.log')
-parser.add_argument('--symbol', metavar='', help="The ecrio.system symbol", default='SYS')
+parser.add_argument('--symbol', metavar='', help="The lgsio.system symbol", default='SYS')
 parser.add_argument('--user-limit', metavar='', help="Max number of users. (0 = no limit)", type=int, default=3000)
 parser.add_argument('--max-user-keys', metavar='', help="Maximum user keys to import into wallet", type=int, default=10)
 parser.add_argument('--ram-funds', metavar='', help="How much funds for each user to spend on ram", type=float, default=0.1)

@@ -15,22 +15,22 @@ namespace eosio { namespace chain {
     * @defgroup native_action_handlers Native Action Handlers
     */
    ///@{
-   void apply_ecrio_newaccount(apply_context&);
-   void apply_ecrio_updateauth(apply_context&);
-   void apply_ecrio_deleteauth(apply_context&);
-   void apply_ecrio_linkauth(apply_context&);
-   void apply_ecrio_unlinkauth(apply_context&);
+   void apply_lgsio_newaccount(apply_context&);
+   void apply_lgsio_updateauth(apply_context&);
+   void apply_lgsio_deleteauth(apply_context&);
+   void apply_lgsio_linkauth(apply_context&);
+   void apply_lgsio_unlinkauth(apply_context&);
 
    /*
-   void apply_ecrio_postrecovery(apply_context&);
-   void apply_ecrio_passrecovery(apply_context&);
-   void apply_ecrio_vetorecovery(apply_context&);
+   void apply_lgsio_postrecovery(apply_context&);
+   void apply_lgsio_passrecovery(apply_context&);
+   void apply_lgsio_vetorecovery(apply_context&);
    */
 
-   void apply_ecrio_setcode(apply_context&);
-   void apply_ecrio_setabi(apply_context&);
+   void apply_lgsio_setcode(apply_context&);
+   void apply_lgsio_setabi(apply_context&);
 
-   void apply_ecrio_canceldelay(apply_context&);
+   void apply_lgsio_canceldelay(apply_context&);
    ///@}  end action handlers
 
 //    /**

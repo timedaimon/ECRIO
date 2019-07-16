@@ -1,0 +1,2078 @@
+commit 4f04041f48a0cd83e2d59c921f2aeb55649cb24a
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 19:21:30 2019 +0900
+
+    modify : cleos
+
+commit 1049a8f273f0814ddb07b9b14f81354301edbeab
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:50:43 2019 +0900
+
+    modify : cleos
+
+commit 156c86452577e6ea12731ac47c37443c2a5ee4cd
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:47:26 2019 +0900
+
+    modify : cleos
+
+commit 1e9653c25c5154becc7f5edb917f596aa69a7c47
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:46:36 2019 +0900
+
+    modify : cleos
+
+commit 7138ab639d939e19fb3d50ad512da45d1450f55b
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:37:36 2019 +0900
+
+    modify : cleos
+
+commit ec19567cf8a7151fcd667103df26dd39ef052722
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:34:12 2019 +0900
+
+    modify: cleos
+
+commit fd315be9b79209c989e2619aeba27bf32da04dc1
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:30:30 2019 +0900
+
+    modify : cleos
+
+commit b9893c32752a32bdcc7afd70069e1982a1f969b7
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:24:22 2019 +0900
+
+    modify : cleos
+
+commit 4dc61688eb6f83251cc8dc48c8aa5273566710da
+Author: timedaimon <timedaimon@gmail.com>
+Date:   Tue Jul 16 18:22:15 2019 +0900
+
+    modify : cleos
+
+commit b288cde9d186fedc42deaf6a83a7922727ac4b6f
+Author: SangHyeonJung <timedaimon@gmail.com>
+Date:   Tue Jul 2 20:07:43 2019 +0900
+
+    modify : ecrio -> lgsio
+
+commit dd08a70d149f8182fb61828e9eae13b439d1612c
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 13:59:13 2019 +0900
+
+    feat: update unittests for ecrio
+
+commit 7cf54e7f9b7481a44e6fdac0babcf35e43eeff17
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 13:52:28 2019 +0900
+
+    feat: update submodule
+
+commit 79b55b3b1bdbfe38e27005e2728f07dfca66943c
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 12:36:22 2019 +0900
+
+    feat: update fc
+
+commit e3d7a23603498d7985d4afa7591f24e8182b7a30
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 12:32:01 2019 +0900
+
+    feat: update fc
+
+commit 2b00f255d3696acaf8bd9c32028c2414f82226ca
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 12:25:27 2019 +0900
+
+    feat: update ecrio
+
+commit cc853d68655fe2f9f7653f4834de13a6496c2062
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:41:06 2019 +0900
+
+    feat: update genesis timestamp
+
+commit 985c2fd0155682ef60425fa9d4397a9efc5d881a
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:39:04 2019 +0900
+
+    feat: dbname update EOS -> CR
+
+commit 670f2dfab5e39734dca45f86351e80dd9713366e
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:38:21 2019 +0900
+
+    feat: update ecrio
+
+commit b2cbc32571d4231d66e7d42e1796e1b3ddf8eb6c
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:34:42 2019 +0900
+
+    feat: update ecrio v1.7.4
+
+commit 156a3d82002a638ef4a23a1014d38af379f26fdd
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:32:21 2019 +0900
+
+    impl: ecrio script
+
+commit c90b4ff967c3658bb30663acecba1718abb541a3
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:30:16 2019 +0900
+
+    feat: update ecrio
+
+commit 71091580d0c490576d6fbdb264447d75c70cf452
+Author: emperorhan <iny27@naver.com>
+Date:   Fri Jun 28 11:25:23 2019 +0900
+
+    feat: update readme
+
+commit 5082391c60b0fa5e68157c385cd402bf25aea934
+Merge: 448287d 784939c
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Jun 4 16:06:01 2019 -0400
+
+    Merge pull request #7466 from EOSIO/merge-release-1.7.4-to-master
+    
+    Merge release 1.7.4 to master
+
+commit 784939cebabdb144f0fa87c0ad1c87e9efd3a68c
+Merge: f932e12 448287d
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Jun 4 14:07:59 2019 -0400
+
+    Merge branch 'master' into merge-release-1.7.4-to-master
+
+commit f932e121b1e0675e6e284e99be3d43f7448c2f37
+Merge: c144376 0260643
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Jun 4 14:01:13 2019 -0400
+
+    Merge pull request #7464 from EOSIO/bump-version-to-1.7.4
+    
+    Bump version to 1.7.4
+
+commit 0260643edc0cf61e766f94b6107b901e0670d530
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Jun 4 13:57:01 2019 -0400
+
+    bump version to 1.7.4
+
+commit c144376f36f2db0da73dc2f8218f2f4088859b1a
+Merge: e6cee03 ce1220f
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Jun 4 13:56:08 2019 -0400
+
+    Merge pull request #7462 from EOSIO/fix_timer_assign_17x_v2
+    
+    fix assignment during timer creation - 1.7
+
+commit ce1220f60f493975f8394744b1702fa76975f110
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Mon Jun 3 18:22:57 2019 -0400
+
+    fix assignment during timer creation
+
+commit e6cee03518d87c59e9ec54ce9035e8c8178ebf29
+Merge: 4a19ca7 48d63e9
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri May 31 07:47:47 2019 -0400
+
+    Merge pull request #7439 from EOSIO/gh7436-sigsegv-1.7.x
+    
+    Fix #7436 SIGSEGV - 1.7.x
+
+commit 48d63e99523663b88c6e7bf8f69ef847d929983a
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu May 30 10:22:18 2019 -0500
+
+    Reference to shared_ptr can be invalidated by completion of push_transaction. Create a local copy of transaction_metadata shared_ptr to keep alive until end of scope.
+
+commit 4a19ca7d890d5b48088b3038b15feff6b5c31faa
+Merge: b2c49cd e7418dd
+Author: scottarnette <49006827+scottarnette@users.noreply.github.com>
+Date:   Tue May 28 15:43:21 2019 -0400
+
+    Merge pull request #7427 from EOSIO/1.7.x-pipeline-base-images
+    
+    [Anka] 1.7.x configured base images pipeline.
+
+commit e7418dd2768ff90231f3be79517a4d94f19f8496
+Author: Scott Arnette <scott.a.arnette@gmail.com>
+Date:   Tue May 28 14:34:29 2019 -0400
+
+    Configured base images pipeline.
+
+commit b2c49cd1c63759ed95f7f1783e0495c159c89cfa
+Merge: 15422af b6836ff
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Fri May 24 16:15:21 2019 -0400
+
+    Merge pull request #7410 from EOSIO/zach-1.7-centralize-eosio-pipeline
+    
+    Centralize EOSIO Pipeline
+
+commit b6836ffedae19e6f844fcd16c1536b867adbee30
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 24 15:18:09 2019 -0400
+
+    Removed eosio pipeline files
+
+commit 15422af0faf4f96258b2a4dca5d20140477413f9
+Merge: 5a722eb 6961e03
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Wed May 15 16:55:54 2019 -0400
+
+    Merge pull request #7354 from EOSIO/zach-1.7-version-label
+    
+    Created "version-label" Integration Test
+
+commit 6961e03a829ca59e6062fd85b6715b9ecb532303
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Tue May 14 19:13:49 2019 -0400
+
+    Finish test purpose comment
+
+commit 1a19c1ab90be637e0969f64a535b4acc26532b1d
+Author: Zach Butler <zach.butler@block.one>
+Date:   Tue May 14 14:32:24 2019 -0400
+
+    Created "version-label" Integration Test
+
+commit 5a722ebcecc82bffd0d9e55e465897e215450731
+Merge: 619163b d53d8b8
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Mon May 13 10:29:04 2019 -0400
+
+    Merge pull request #7323 from EOSIO/zach-cdt-fixes
+    
+    Look in both lib and lib64 for CMake modules when building EOSIO Tester
+
+commit 619163b361615761d892c89b57002d7790e62ac2
+Merge: abc2fb8 20e4982
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Sat May 11 12:10:36 2019 -0500
+
+    Merge pull request #7333 from EOSIO/verbose-unittest-1.7.x
+    
+    Use debug level logging for --verbose - 1.7.x
+
+commit 20e49824e0270f61fa3b40d83efa5cc4cf3d7bcc
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Sat May 11 09:30:11 2019 -0500
+
+    Use debug level logging when --verbose output requested
+
+commit d53d8b8c0ba9c37fc0f2fe14818e7d5ecc5f6ae6
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 10 10:55:27 2019 -0400
+
+    Tell CMake to look in both lib and lib64 for libbuiltins
+
+commit abc2fb8b22fe916de879bbc0e766fc2e00e015b6
+Merge: e7d0fb2 5fc783c
+Author: Khaled A Al-Hassanieh <35532164+zorba80@users.noreply.github.com>
+Date:   Mon May 6 14:31:00 2019 -0400
+
+    Merge pull request #7277 from EOSIO/cleos-rex-1.7.x
+    
+    Fix cleos REX help - v1.7.x
+
+commit 5fc783cb8bb3acb85c2fb81a37d45de18b745afa
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon May 6 12:06:26 2019 -0500
+
+    Fix cleos REX help
+
+commit e7d0fb26a1f77177590faa30ddeb29750d6fc3a1
+Merge: 3a0fc02 5120890
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Mon May 6 11:52:51 2019 -0400
+
+    Merge pull request #7271 from EOSIO/zach-1.7-pipeline-config
+    
+    Added eosio-nightly-builds pipeline to pipeline.jsonc
+
+commit 5120890351836181754e53fc2aa30c2aa85fa830
+Author: Zach Butler <zach.butler@block.one>
+Date:   Mon May 6 10:52:48 2019 -0400
+
+    Added eosio-nightly-builds pipeline to pipeline.jsonc
+
+commit 3a0fc02eeb1abcbccf51af1291f035745b37230a
+Merge: edeb698 072a4bb
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Fri May 3 13:30:13 2019 -0400
+
+    Merge pull request #7257 from EOSIO/zach-1.7-test-metrics
+    
+    Move Test Metrics Code to Agent
+
+commit 072a4bbb707b481ce9cc796fdbcb0f2cd7b87aa5
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 3 11:02:36 2019 -0400
+
+    Return exit success in Buildkite so we don't prevent PRs from being merged
+
+commit 8cf3c41e292a480651397fdacb181018a3b1bf98
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 3 10:13:55 2019 -0400
+
+    Added check for skipped jobs
+
+commit 111c8b7c80fd53c6d8a585596176d6df3bb3d99c
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 3 09:45:52 2019 -0400
+
+    Do not fail build due to metrics
+
+commit ab4e11e1795f386e1dc8bbf10085dd2b2f167c43
+Merge: 48a8e66 edeb698
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 3 09:43:12 2019 -0400
+
+    Accidentally used old base, merge branch 'release/1.7.x' into zach-1.7-test-metrics
+
+commit 48a8e6606a09a33d2725bda085db91ddb0c97bad
+Author: Zach Butler <zach.butler@block.one>
+Date:   Fri May 3 09:28:46 2019 -0400
+
+    Make warnings and errors more obvious in Buildkite
+
+commit 0505264a6804aaff0720818dec8e1ebdc5fe173a
+Author: Zach Butler <zach.butler@block.one>
+Date:   Thu May 2 21:52:19 2019 -0400
+
+    Added universal pipeline configuration file
+
+commit c4c431ab252a05f97c8eb124faf32ecbf13012e6
+Author: Zach Butler <zach.butler@block.one>
+Date:   Thu May 2 21:41:03 2019 -0400
+
+    Created test metrics Buildkite job
+
+commit edeb698ebe68410553a6e2f0667d437300dab339
+Merge: b3a9e2e d2db42e
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed May 1 14:28:53 2019 -0500
+
+    Merge pull request #7245 from EOSIO/log-level-v1.7.x
+    
+    Change default log level from debug to info. - v1.7.x
+
+commit d2db42e31d365f0f39da4d23d5fc3156ad89b0e8
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed May 1 11:59:48 2019 -0500
+
+    Change default log level from debug to info.
+
+commit b3a9e2edea0fa75f025996598bb6ab48f0c53a32
+Merge: 99ce78c fc817a1
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Apr 30 14:04:01 2019 -0500
+
+    Merge pull request #7226 from EOSIO/update-fc-v1.7.x
+    
+    Update to fc with gcc7 fix - v1.7.x
+
+commit fc817a197d5f321ea57b8aa4bd48973246a2bc9d
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Apr 29 13:28:05 2019 -0500
+
+    Add missing import or re
+
+commit 740b94f17b974d5c92d8e9f685113c66c222f14c
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Apr 29 11:06:51 2019 -0500
+
+    Determine flags for pgrep dynamicly instead of by list of hosts
+
+commit 3c7076ee0fb13569be861b7a2f4f66e1a1f287da
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Apr 29 10:28:35 2019 -0500
+
+    Add additional platforms for pgrep so unpinned build passes tests
+
+commit 98326a909c69948e17776442046fc6990eb3f77b
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri Apr 26 15:33:40 2019 -0500
+
+    Update to fc with gcc7 fix
+
+commit 448287d520f5f8c282139ecc60f227c218d42e82
+Merge: 38d8c2b a9aa4c9
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Apr 25 13:43:18 2019 -0500
+
+    Merge pull request #7216 from EOSIO/merge-release-1.7.3-to-master
+    
+    Merge release 1.7.3 to master
+
+commit a9aa4c9390903353dd9231de3ad396deada003e9
+Merge: 99ce78c 38d8c2b
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Apr 25 12:38:45 2019 -0500
+
+    Merge branch 'master' into merge-release-1.7.3-to-master
+
+commit 99ce78cf03a3531b7a82cf277d80193821f1205a
+Merge: d67bf6f a5c0258
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Apr 25 12:34:28 2019 -0500
+
+    Merge pull request #7210 from EOSIO/bump-to-1.7.3
+    
+    Bump to 1.7.3
+
+commit a5c025867e65265fd1a42d5849c4d2f9847d5b18
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Apr 25 08:04:36 2019 -0500
+
+    Bump to 1.7.3
+
+commit d67bf6ff1332b5617baccd40e39a4310080c6d07
+Merge: e8a31e2 f5a8abb
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Wed Apr 24 22:44:18 2019 -0400
+
+    Merge pull request #7203 from EOSIO/docker_yubihsm_dep_fix_17x
+    
+    Add some missing libs for build (Docker 1.7 fix)
+
+commit e8a31e26e417758f3a88358f6db579fb0d2e3a3a
+Merge: d18b529 ec33e3f
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Apr 24 17:51:58 2019 -0500
+
+    Merge pull request #7202 from EOSIO/fix-block-log-bugs-1.7.x
+    
+    Fix bugs in block_log - v1.7.x
+
+commit f5a8abbd2f6d260a39513da9013e2ad31cd08ee0
+Author: lcgogo <lcgogo123@163.com>
+Date:   Wed Apr 17 16:05:44 2019 +0800
+
+    Add some missing libs for build
+    
+    RUN apt-get update -y && apt-get install -y libcurl4-openssl-dev libusb-1.0-0-dev
+
+commit ec33e3f2fe905c878d91b3b2740be668812c604c
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Apr 23 16:50:42 2019 -0400
+
+    allow opening block log with no blocks (fixes undefined behavior bug); contruct_index should leave index file empty if block log contains no blocks
+
+commit d18b52921db997ad61348292b468dd16eb4caa66
+Merge: 6536786 2e6599d
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Apr 24 16:14:51 2019 -0500
+
+    Merge pull request #7199 from EOSIO/keep-block-log-open-1.7.x
+    
+    Keep block log open to minimize open/close of file - v1.7.x
+
+commit 2e6599d539a57203afb3ed0a0678d733c0c9bcb6
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Apr 23 12:51:38 2019 -0500
+
+    Keep block log open to minimize open/close of file
+
+commit 6536786cd28c7c9562410e73572a81119d6bf1bc
+Merge: 65efd15 be8a219
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Fri Apr 19 14:11:09 2019 -0500
+
+    Merge pull request #7169 from EOSIO/reduce-noise-1.7.x
+    
+    Reduce logging of complete object when unable to serialize - v.1.7x
+
+commit be8a219b58820c441716d55d5e5226b6354e1c5c
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri Apr 19 13:15:32 2019 -0500
+
+    Add demangle of type
+
+commit 63ef287b7f3e2bc4f4139789ca9b8c880ea626cd
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri Apr 19 12:20:30 2019 -0500
+
+    Reduce logging of complete object when unable to serialize
+
+commit 65efd1511c77f4a32aca92f299eb656d46eb6cbd
+Merge: f34e224 6868ad0
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Thu Apr 18 21:30:27 2019 -0400
+
+    Merge pull request #7161 from EOSIO/zach-1.7-centralize-lrt
+    
+    Centralize Long-Running Test Pipeline
+
+commit 6868ad071c0c8dad9ce5cf785437e9baf0df08a4
+Author: Zach Butler <zach.butler@block.one>
+Date:   Thu Apr 18 17:24:09 2019 -0400
+
+    Remove long-running tests
+
+commit 38d8c2b9ec74cf127f80260037a0eeb69196387d
+Merge: 265b60d a2a1e9e
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Apr 18 10:28:08 2019 -0500
+
+    Merge pull request #7155 from EOSIO/merge-release-1.7.2-to-master
+    
+    Merge release 1.7.2 to master
+
+commit a2a1e9eaf64dad4f1e816db2c77a5dcb45683953
+Merge: f34e224 265b60d
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Apr 18 09:21:40 2019 -0500
+
+    Merge branch 'master' into merge-release-1.7.2-to-master
+
+commit f34e224084ef3274a02008a668e2f0204e7ca5e3
+Merge: 7ecd886 25fe228
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Apr 18 09:19:21 2019 -0500
+
+    Merge pull request #7152 from EOSIO/bump-to-1.7.2
+    
+    Bump to 1.7.2
+
+commit 25fe2282c8f040e05e151d17e1c0033197c4358a
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Apr 17 19:54:25 2019 -0500
+
+    Bump to 1.7.2
+
+commit 7ecd886c420e55d83abedf021741894fb2c6af36
+Author: Zach <34947245+kj4ezj@users.noreply.github.com>
+Date:   Wed Apr 17 19:51:41 2019 -0400
+
+    .buildkite Folder Updates Merged in from develop (#7148)
+    
+    * Removed Buildkite pipelines which have been centralized
+    
+    * Buildkite: Merged in changes from eosio pipeline on develop
+    
+    * Case matters
+    
+    * BASH doesn't like exclamation points in quotes
+    
+    * Forgot these steps run in shell, not BASH
+    
+    * Why use quotes at all without variables when apostrophies exist
+    
+    * Migrated long-running tests from develop
+    
+    * Added .pipelinebranch to point to legacy-os for centralized pipelines
+    
+    * Disabled AWS-2 NP and LR tests
+    
+    * Git Submodule Regression Check requires a script 0_o
+
+commit 73d6c7e768673caeeac8f4e50abf5ec95006391a
+Merge: c332e6b 8f9bfc9
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Apr 17 17:13:10 2019 -0500
+
+    Merge pull request #7140 from EOSIO/zach-1.7-centos-lib
+    
+    Added lib64 to CMAKE_MODULE_PATH
+
+commit 8f9bfc9c5072076473a8295d820b268794a0b170
+Author: Zach Butler <zach.butler@block.one>
+Date:   Tue Apr 16 19:21:02 2019 -0400
+
+    Added lib64 to CMake search space because of CentOS
+
+commit c332e6b720753406471f585189368a0be811778c
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Tue Apr 16 11:30:59 2019 -0400
+
+    Revert EXCLUDE_FROM_ALL (release/1.7.x) (#7130)
+    
+    * Revert EXCLUDE_FROM_ALL
+    
+    * Disable building Programs and Emscripten stuff
+
+commit 265b60db3132f28e084b5e3644d80a8607b6863f
+Merge: f3e5134 698251c
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Apr 10 12:44:36 2019 -0400
+
+    Merge pull request #7105 from EOSIO/revert-7054-cleos-http-content-length
+    
+    Revert "Allow cleos to query an API node behind Cloudflare"
+
+commit 698251caf943b56ddd8eac7c899ea30a641db2dc
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Apr 10 12:41:57 2019 -0400
+
+    Revert "Allow cleos to query an API node behind Cloudflare"
+
+commit f3e5134ddb82553002e90bc35da2d6fd727728cb
+Merge: 73501a4 5e8c459
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Apr 10 12:24:47 2019 -0400
+
+    Merge pull request #7054 from elmato/cleos-http-content-length
+    
+    Allow cleos to query an API node behind Cloudflare
+
+commit 5e8c459607f88cd51d226faf85fc12b1e04d7062
+Author: Matias Romeo <matias.romeo@gmail.com>
+Date:   Tue Apr 9 21:57:25 2019 -0300
+
+    cleos: simplify http response body reading
+
+commit c0b542edc57c8e4669f90faa1060f1531fde4ad4
+Merge: c4adcb3 c87c8f9
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Apr 9 12:23:55 2019 -0400
+
+    Merge pull request #7085 from EOSIO/fix-gh#7084-v1.7.x
+    
+    Fix crash #7084 - v1.7.x
+
+commit c4adcb373edf26ffb670c054d4637f0022c6c884
+Merge: af76934 65cb7bd
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Mon Apr 8 15:19:15 2019 -0400
+
+    Merge pull request #7065 from EOSIO/readme_uninstall_goof_17x
+    
+    fix rpm command for uninstalling eosio - 1.7
+
+commit 65cb7bdffe7bc378c2fde0853f4b97698a1bfcd0
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Mon Apr 8 14:59:28 2019 -0400
+
+    Also fix fedora RPM uninstall
+
+commit c87c8f998598edd726ed5df9c8ff14fca2b3a1bf
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Apr 8 11:20:12 2019 -0500
+
+    read_delay_timer runs on net_plugin thread_pool so app().post for execution of start_read_message
+
+commit 3554f46703e729f6e8ae99fa6f6e980543c80fca
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Thu Apr 4 15:01:05 2019 -0400
+
+    fix rpm command for uninstalling eosio
+
+commit 73501a46465ca42688bb30c00f4f86e82f6b2dc1
+Merge: 14a65ac 5034d83
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Apr 4 12:40:58 2019 -0400
+
+    Merge pull request #7062 from EOSIO/merge-1.7.x-to-master
+    
+    Docker/README.md restored
+
+commit 5034d8323588e7d5ef06d3894f7788edc563f2ca
+Merge: af76934 14a65ac
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Apr 4 11:11:29 2019 -0400
+
+    Merge branch 'master' into merge-1.7.x-to-master
+
+commit af769342215b74123f5510b1f1313f3910127516
+Merge: 8b07340 dd59cf5
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Apr 4 11:10:13 2019 -0400
+
+    Merge pull request #7058 from EOSIO/doc-hub-1.7.x
+    
+    Add back in Docker Hub deprecation that was accidentally removed - v1.7.x
+
+commit dd59cf5820599711dd84db93416c9ff4a66e1e2d
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Apr 3 18:09:48 2019 -0400
+
+    Add back in Docker Hub deprecation that was accidentally removed
+
+commit 254cde20265da710f172a0178e73e1baacb611f2
+Author: Matias Romeo <matias.romeo@gmail.com>
+Date:   Wed Apr 3 12:39:12 2019 -0300
+
+    cleos: handle no Content-length header in http response
+
+commit 14a65aca147edf51fd86a958949e237fd430b9ed
+Merge: 686f0de 756ebae
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Apr 3 11:22:52 2019 -0400
+
+    Merge pull request #7052 from EOSIO/release-1.7.1
+    
+    Release 1.7.1
+
+commit 756ebaecee520f3e23c991befb9a2aa32307f907
+Merge: 8b07340 686f0de
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Apr 3 10:59:03 2019 -0400
+
+    Merge branch 'master' into release-1.7.1
+
+commit 8b073408ec85e552299fde764a72e09859f68107
+Merge: 3d118bb ab0ff58
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Apr 2 21:57:09 2019 -0400
+
+    Merge pull request #7051 from EOSIO/bump-to-1.7.1
+    
+    Bump version to 1.7.1
+
+commit ab0ff58d6cccfe208cfa6007f10501104112d568
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Apr 2 19:47:03 2019 -0400
+
+    Update recommended
+
+commit 90338cfe98c4a1d49264cd35d6a3a3d8228b200f
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Apr 2 19:39:58 2019 -0400
+
+    Bump to 1.7.1
+
+commit 3d118bbc1e4dbf0115895baf815370053a08b13a
+Merge: 9d481bf 77a1720
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Apr 2 19:30:51 2019 -0400
+
+    Merge pull request #7049 from EOSIO/1.7.1-security-omnibus
+    
+    Consolidated Security Fixes for 1.7.1
+
+commit 77a172022832178fdee288b88f56ca765632e8b2
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Apr 2 19:29:29 2019 -0400
+
+    Consolidated Security Fixes for 1.7.1
+    
+    - net_plugin security fixes
+
+commit 9d481bfb8c5cffd72a18fde1e384beab5c2fc7e2
+Merge: e96effd 516485f
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Apr 2 17:12:08 2019 -0400
+
+    Merge pull request #7046 from EOSIO/cleos-transaction-trace-fixes-to-1.7
+    
+    print action traces in cleos even if nonmandatory fields are missing - v1.7.x
+
+commit 516485f3e1d96b652523620424d3d7daeeeb97fa
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Apr 2 14:25:48 2019 -0400
+
+    print action traces in cleos even if nonmandatory fields are missing
+
+commit e96effd265a503330350d375747ce753e91f0d71
+Merge: 6059f5b 5bc1cce
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Mon Apr 1 18:30:06 2019 -0400
+
+    Merge pull request #7027 from EOSIO/net-plugin-close-fix
+    
+    Fix for close() called while async_read in-flight - v1.7.x
+
+commit 6059f5ba7de2d79927df16b7388bcf40c7655ede
+Merge: 3479321 dd0b171
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Mon Apr 1 18:28:59 2019 -0400
+
+    Merge pull request #7031 from EOSIO/sign-key-future-1.7.x
+    
+    Use shared_future - v1.7.x
+
+commit 3479321d4917bb7b3a410f789d595cea163ab8d1
+Merge: fbf5350 70ca192
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Mon Apr 1 15:29:23 2019 -0400
+
+    Merge pull request #7037 from EOSIO/remove_final_boost_threads_17x
+    
+    [XC 10.2] Remove final boost thread references in cmake & change macos boost build - 1.7
+
+commit dd0b171ce8611957f13056d0662037f3e1404644
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Apr 1 14:57:54 2019 -0400
+
+    Add test for recover_keys without start_recover_keys
+
+commit fbf5350a6a0be2f61c63898b609941f0020689d8
+Merge: ec50c86 1b593e6
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Mon Apr 1 08:59:17 2019 -0500
+
+    Merge pull request #7032 from EOSIO/chainbase_remove_boost_thread_17x
+    
+    [XC 10.2] chainbase sync - Remove boost thread include and locking support - 1.7
+
+commit b698d19b2c889ecc4545b4f717902533c74c006d
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Apr 1 09:25:02 2019 -0400
+
+    Calculate recovery keys instead of asserting if start not called or different chain_id. Restores old behavior.
+
+commit 70ca1920abdb2eedc86734599542cf0f691fa192
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sun Mar 31 15:50:20 2019 -0400
+
+    When building boost on macos, only build the libraries needed by eosio
+
+commit 2570a320ff3560372f6c4b9866dad97e9ee025b7
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sun Mar 31 15:48:57 2019 -0400
+
+    Remove final remnants of boost thread usage from cmake
+    
+    Because this could be the last boost thread reference, we need to tell cmake to still pass thread compiler flags
+
+commit ec50c8640dd6a6f9e6de6bbd270526291282c3b7
+Merge: 0dcf356 c920387
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sun Mar 31 11:26:41 2019 -0400
+
+    Merge pull request #7029 from EOSIO/remove_fc_shared_ptr_17x
+    
+    [XC 10.2] fc sync - Remove fc::shared_ptr & refactor logging code to not use it - 1.7
+
+commit 0dcf35665e76888e3c51575a92fbcbc4ac93249e
+Merge: 9f719b3 537a658
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sun Mar 31 11:26:07 2019 -0400
+
+    Merge pull request #7020 from EOSIO/asio_exp_string_view_removal_17x
+    
+    [XC 10.2] disable asio's experimental string_view usage on macos - 1.7
+
+commit 9f719b3ce13e0d076d1d7d5185e23d82d03dac3e
+Merge: 19c354e 05a3436
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sun Mar 31 11:25:38 2019 -0400
+
+    Merge pull request #7018 from EOSIO/std_thread_mongo_plugin_17x
+    
+    [XC 10.2] Remove boost::thread usage from mongo plugin - 1.7
+
+commit 1b593e6e6f344f28f0d5d29f236d0581eedc8cdb
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Mar 29 17:58:49 2019 -0400
+
+    chainbase sync - Remove boost thread & chain locking code
+
+commit cf1a2faf9b4942d6c715020120505c699da9dcab
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Sat Mar 30 08:53:58 2019 -0500
+
+    Simplify key recovery future logic
+
+commit 5bc1ccee5aa37ea5347330470fdf8d2888d8830c
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri Mar 29 17:36:31 2019 -0500
+
+    Can't call connected(), it checks flag that is only set after first read
+
+commit 2180c648e3f4075b48a89889be4e9a268bff4043
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri Mar 29 16:54:49 2019 -0500
+
+    Use shared_future instead of future since accessed across threads
+
+commit c920387944956e9868e1c21f1247fe1f9fd302b5
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Mar 29 17:54:00 2019 -0400
+
+    fc sync - Remove fc::shared_ptr & refactor logging code to not use it
+
+commit 92f11463f0f0974dbb99dc82dbd0c3e6c3bad2f7
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Fri Mar 29 15:59:30 2019 -0500
+
+    Fix for close() called while async_read in-flight
+
+commit 537a6588f701f7533410342f7c53b194a5ad7385
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Mar 29 14:28:25 2019 -0400
+
+    disable asio's experimental string_view usage on macos
+    
+    Newer stdlibc++s can #error in experimental string_view
+
+commit 05a343600d6fe6cea88e3c38335fa8e3b8234fd0
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Mar 29 14:20:44 2019 -0400
+
+    Remove boost::thread usage from mongo plugin
+    
+    boost::thread is problematic on some new compiler + old boost combos
+
+commit 19c354e53885109bd4f1d969062726f8db06db76
+Merge: 6aeb47a 9931784
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Mar 28 14:25:24 2019 -0500
+
+    Merge pull request #7010 from EOSIO/josephjguerra-patch-3
+    
+    Create CONTRIBUTING.md
+
+commit 6aeb47a6d580f85735ef295b37f0c04a943659d5
+Merge: 459e078 033b3b3
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Mar 28 14:25:10 2019 -0500
+
+    Merge pull request #7009 from EOSIO/josephjguerra-patch-2
+    
+    Update README.md
+
+commit 459e07806b119c2ec3f48ec8adccaf7218a5f1db
+Merge: 5542e9d 32a9a36
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Mar 28 14:24:57 2019 -0500
+
+    Merge pull request #7008 from EOSIO/josephjguerra-patch-1
+    
+    Update LICENSE
+
+commit 9931784169306ed0e092d362fadfe21e855a157a
+Author: Joseph J Guerra <8146030+josephjguerra@users.noreply.github.com>
+Date:   Thu Mar 28 13:34:33 2019 -0400
+
+    Create CONTRIBUTING.md
+
+commit 033b3b3e60cb8444abef6c6a5edc6849d3b94b53
+Author: Joseph J Guerra <8146030+josephjguerra@users.noreply.github.com>
+Date:   Thu Mar 28 13:33:07 2019 -0400
+
+    Update README.md
+
+commit 32a9a360b4eeb6bb7af06e5f045f26755c8ed4a5
+Author: Joseph J Guerra <8146030+josephjguerra@users.noreply.github.com>
+Date:   Thu Mar 28 13:30:36 2019 -0400
+
+    Update LICENSE
+
+commit 5542e9d285a35bbac0a9ac695d6d46d35905644f
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Mar 27 13:20:53 2019 -0400
+
+    Remove setting CMAKE_OSX_SYSROOT (#6986)
+    
+    Setting CMAKE_OSX_SYSROOT has shown to cause build failures on fresh macos 10.13 installs
+
+commit 976bf8a017194d96a8ee3fb4914e84ad2ff23a4c
+Merge: f358cad 868ea8c
+Author: Todd Fleming <tbfleming@gmail.com>
+Date:   Thu Mar 21 17:18:23 2019 -0400
+
+    Merge pull request #6982 from EOSIO/fix-sh-leak
+    
+    #6980: fix memory leak when --trace-history not used
+
+commit 868ea8c9c6d55892acfbe431723866c502a48b47
+Author: Todd Fleming <todd.fleming@block.one>
+Date:   Thu Mar 21 13:23:07 2019 -0400
+
+    #6980: memory leak when --trace-history not used
+
+commit f358cadc2a6e9431a4b2d7f8881410020ab89252
+Merge: e356bd7 9e849da
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 20 16:16:47 2019 -0500
+
+    Merge pull request #6961 from EOSIO/net_plugin-asio-fix
+    
+    Add strand to protect internals of asio - 1.7.x
+
+commit e356bd784d5baf432c54a002448ac6999224141a
+Merge: 7afff70 45bfc94
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 20 15:38:17 2019 -0500
+
+    Merge pull request #6974 from EOSIO/txn-gen-fix-1.7
+    
+    Fix txn_test_gen_plugin crash on multiple create_test_accounts calls - 1.7.x
+
+commit 45bfc94bb026b05f35f165c723034bd96993dac3
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Mar 20 10:41:43 2019 -0500
+
+    Prevent txn_test_gen_plugin from calling back into http_plugin multiple times per request.
+
+commit 7afff705b922564a6d21cae464ac9650e914e718
+Merge: 6845170 c4a327f
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Mar 20 09:43:27 2019 -0400
+
+    Merge pull request #6969 from EOSIO/remove-eosio-wat2wasm_17
+    
+    remove eosio-wat2wasm and other WAVM tools from being built - 1.7
+
+commit 9e849da81b42fb292f5b3d1ad2b576ab9fbd3788
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Mar 19 15:52:04 2019 -0500
+
+    Ensure that intermediate asio operations are on the same thread
+
+commit c4a327f4ff4eb5ada2266fcf0b827d3c2f384d70
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Mar 19 11:24:29 2019 -0400
+
+    Rename eosio-wat2wasm back to orginal name; don't install
+    
+    eosio-wat2wasm was really the Assemble command from WAVM and we used it for the old wasm build enviroment. It's no longer needed. Remove the rename and install changes effectively reverting ae9388d restoring this back to upstream
+
+commit 88e1ff3b4d17977c364c75d36b912583f466ffea
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Mar 19 11:56:50 2019 -0400
+
+    Don't build WAVM tools any longer
+    
+    Some of these don't work as intended due to changes in WAVM to support EOSIO
+
+commit 916c52280983a96a792984ccb487908e91309bef
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Mar 18 10:25:56 2019 -0500
+
+    Add strand to protect internals of asio
+
+commit 686f0deb5dac097cc292f735ccb47c238e763de0
+Merge: 15902ac ebebb90
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 13 18:55:09 2019 -0500
+
+    Merge pull request #6928 from EOSIO/merge-release-1.7.0
+    
+    Merge release 1.7.0 into master
+
+commit ebebb90670bbdd3325f2c6d62f98409d513c6a54
+Merge: 15902ac 6845170
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Mar 13 18:09:28 2019 -0500
+
+    Merge release/1.7.x at 1.7.0
+
+commit 684517086423b1058e59f03c20ebb8ac7a60e782
+Merge: a29d257 222ef47
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 13 17:57:31 2019 -0500
+
+    Merge pull request #6927 from EOSIO/bump-to-1.7.0
+    
+    Bump version to 1.7.0
+
+commit 222ef4721aa3fe9f885e11f78b3b2131476162b6
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Mar 13 16:56:11 2019 -0500
+
+    Add missing -1 to package names
+
+commit a29d257bb91166706f9327620618a3a41297bed2
+Merge: 03b2320 e245e07
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Mar 13 17:26:34 2019 -0400
+
+    Merge pull request #6926 from EOSIO/fix_deb_libicu_dep
+    
+    add libicu as dependency for .deb packages
+
+commit c83c212e3085024b808276998fc1c415d2993d2c
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Mar 13 15:40:48 2019 -0500
+
+    Bump to 1.7.0
+
+commit e245e07aba13a89fb74e2582539fd276ba3a3d84
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Mar 13 15:45:25 2019 -0400
+
+    add libicu as dependency for .deb packages
+    
+    Somewhere along the line nodeos picked up a dependency on libicuuc
+
+commit 03b23209287941722cd89b7718c09dd25ad1b3b4
+Merge: 5a9da91 90120e2
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Fri Mar 8 14:07:08 2019 -0500
+
+    Merge pull request #6901 from EOSIO/add-back-integration_test-contract
+    
+    Add back integration_test contract; fixes nodeos_under_min_avail_ram_lr_test
+
+commit 90120e2d7d0ca77ade1a4a31663ee18558c7e6c8
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Fri Mar 8 12:42:23 2019 -0500
+
+    add back integration_test contract; needed by tests/nodeos_under_min_avail_ram.py long running test
+
+commit 15902acabe21f0f310fdcf57805b090d4008cb8b
+Merge: c8f2607 5e8e294
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Mar 7 09:58:14 2019 -0500
+
+    Merge pull request #6889 from EOSIO/merge-1.6.3
+    
+    Merge 1.6.3
+
+commit 5a9da91911618f6867f44c5ccaa6b05a53224f13
+Merge: 9958d83 a827e9d
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 6 17:23:12 2019 -0500
+
+    Merge pull request #6887 from EOSIO/bump-to-1.7.0-rc2
+    
+    Bump version to 1.7.0-rc2
+
+commit 5e8e2949b72ac973393a1b86ed590c52815298f8
+Merge: 517fd2c bf85b4f
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 6 17:23:01 2019 -0500
+
+    Merge pull request #6886 from EOSIO/bump-to-1.6.3
+    
+    Bump version to 1.6.3
+
+commit a827e9d87900433ae5fe4d4d9d1a1dbf277b85ab
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Mar 6 17:17:21 2019 -0500
+
+    Bump version to 1.7.0-rc2
+
+commit bf85b4fcea6527882a0217fc0adab02cd3cd5bc2
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Mar 6 17:14:48 2019 -0500
+
+    Bump version to 1.6.3
+
+commit 9958d832a2597bb2fc12e9b8d83506941625a3cb
+Merge: cb95019 0776c11
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 6 14:56:46 2019 -0500
+
+    Merge pull request #6882 from EOSIO/feature/1.7.0-rc2-security-omnibus
+    
+    Consolidated Security Fixes for 1.7.0-rc2
+
+commit 517fd2c9a463b303e0d2e38e6d1b8b32f61b2f80
+Merge: 1d48532 12d9961
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 6 14:56:27 2019 -0500
+
+    Merge pull request #6881 from EOSIO/feature/1.6.3-security-omnibus
+    
+    Consolidated Security Fixes for 1.6.3
+
+commit cb95019ebfe13f67f9ad9a0e2745c9af136c0e0d
+Merge: b41c77d a8c1ced
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 6 11:28:59 2019 -0500
+
+    Merge pull request #6871 from EOSIO/sig-cpu-usage-1.7.x
+    
+    Signature cpu usage - v1.7.x
+
+commit 1d485322227aad319ad243cf4cea7049170cf2a9
+Merge: 60dcf1a 7c1e14a
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Mar 6 11:28:42 2019 -0500
+
+    Merge pull request #6870 from EOSIO/sig-cpu-usage-1.6.x
+    
+    Signature cpu usage - v1.6.x
+
+commit 0776c115c45e9f1f72c8ed0c118699b4cc8425f2
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Mar 5 16:53:20 2019 -0500
+
+    Consolidated Security Fixes for 1.7.0-rc2
+    
+    - Fix small memory leak in net_plugin.
+    - Add additional deadline checks to transaction authorization.
+
+commit b41c77d8a128fec1d1f31dd05b009a5ca6b441f4
+Merge: a234e21 00a29f3
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Mar 5 16:47:16 2019 -0500
+
+    Merge pull request #6868 from EOSIO/sig_fix_v3_17x
+    
+    appbase: ensure ctrl-c during startup handled correctly - 1.7
+
+commit 12d996150d233bff65d6bcc328e742a6d564b0cf
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Mar 5 16:23:34 2019 -0500
+
+    Consolidated Security Fixes for 1.6.3
+    
+    - Fix small memory leak in net_plugin.
+    - Add additional deadline checks to transaction authorization.
+
+commit 00a29f370f1eec8f4c9621d2e3d010f569a34469
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Mar 5 15:55:40 2019 -0500
+
+    appbase: ensure ctrl-c during startup handled correctly
+
+commit a8c1cedb4df2be4a687fda67eb7498c74e651509
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Mar 5 09:00:21 2019 -0500
+
+    Call recover keys before transactions execution so trx->sig_cpu_usage is set correctly
+
+commit 7c1e14a81af8cf0f9da8e64774f411f4ccacc8f7
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Mar 5 09:00:21 2019 -0500
+
+    Call recover keys before transactions execution so trx->sig_cpu_usage is set correctly
+
+commit a234e216a4ee2c2f98f10786e8d080af3dcae331
+Merge: 99f7704 f5e4529
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sat Mar 2 15:37:11 2019 -0500
+
+    Merge pull request #6859 from EOSIO/stable-priority-queue-v1.7.x
+    
+    Update to appbase with FIFO pririty queue - v1.7.x
+
+commit f5e4529d96af708885335cda2545b54ced4e155b
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Sat Mar 2 09:01:56 2019 -0600
+
+    Update to appbase with FIFO pririty queue
+
+commit 99f770410be59d6899f8f2bdc16f2a66acf991db
+Merge: 22457bf c699544
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Mar 1 16:23:02 2019 -0500
+
+    Merge pull request #6858 from EOSIO/appbase_sig_fix_v2_17x
+    
+    appbase: rework blocking (queuing) exit signals during shutdown - 1.7
+
+commit c69954416cd392bd58b1e8f3722d60b41a3bd3a9
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Mar 1 15:25:15 2019 -0500
+
+    appbase: rework blocking (queuing) exit signals during shutdown
+    
+    The previous fix for blocking signals during shutdown seems to have problems on older platforms/compilers/stdlibs like gcc6. To be completely frank I couldn’t quite pinpoint the exact cause but I highly suspect it is something to do with the application instance being static and thus the ordering of static destructors being unfavorable.
+    
+    I’ve changed the implementation such that during startup a separate thread is run that catches the signals but after startup that thread is retired and signal handling is then handled on the main io_service. Signals end up being blocked (queued) until destruction of application’s io_service because the async_wait() will hold a shared_ptr to the signal_set. The implementation ends up being a bit long winded but means there are no shenanigans trying to clean up threads after main() has fully returned.
+
+commit 60dcf1a368dd32797199ce4db6767c74c444b756
+Merge: 3d05285 3b15c4f
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Mon Feb 25 07:14:38 2019 -0600
+
+    Merge pull request #6823 from fsword/patch-1
+    
+    Wrong tag/branch name
+
+commit 3b15c4f0d7bbd4c0138060a85dacce5711ba1b1c
+Author: fsword <li.jianye@gmail.com>
+Date:   Sat Feb 23 14:44:29 2019 -0800
+
+    Wrong tag/branch name
+    
+    there is no tag or branch named "1.6.2", I think it should be "v1.6.2"?
+
+commit 22457bf0b748176545a07fe3b481c073633a32ee
+Merge: fabc0b2 d995779
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sat Feb 23 10:37:30 2019 -0500
+
+    Merge pull request #6816 from EOSIO/block_signals_during_shutdown_17x
+    
+    appbase: Block (queue) exit signals during shutdown - 1.7
+
+commit d995779208e8e3a6e308277c2d08bd4d24b90597
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Fri Feb 22 14:27:03 2019 -0500
+
+    appbase: Block (queue) exit signals during shutdown
+    
+    When a shutdown signal is handled the sig_set is 1) canceled and 2) destroyed. This means that signals are no longer handled by boost::asio and revert back to default behavior. If someone accidentally hits ctrl-c a second time during a long shutdown they run the risk of leaving the database dirty as that second ctrl-c will be insta-kill.
+    
+    This patch changes the behavior and keeps the sig_set active forever. This means that even after the first handled async_wait() on the sig_set (that starts an appbase quit), additional signals in the set are effectively “blocked” (not posix blocked, but blocked in the sense they are consumed and queued by the sig_set that is not being async_wait()ed on)
+
+commit fabc0b2c1469cd210b6b676434dded5af60b543b
+Merge: 4cc0cad af827ea
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Thu Feb 21 17:17:13 2019 -0500
+
+    Merge pull request #6808 from EOSIO/feature/bump-version-to-1.7.0-rc1
+    
+    bump version to 1.7.0-rc1
+
+commit af827eaf556c5986d1c8351a8dad80e25e261c98
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Thu Feb 21 17:12:23 2019 -0500
+
+    bump version to 1.7.0-rc1
+
+commit 4cc0cad4575c5b9709b7c68585a0e02b40fd1ee7
+Merge: 4071afb d90df70
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Feb 21 17:10:11 2019 -0500
+
+    Merge pull request #6803 from EOSIO/net-plugin-log
+    
+    Net plugin use local logger
+
+commit 4071afb41060a385de219e1f7dc0b8676f55a0f5
+Merge: f8b55dc d942aed
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Feb 21 16:57:57 2019 -0500
+
+    Merge pull request #6806 from EOSIO/cleos-output
+    
+    Enable options to print full console output
+
+commit f8b55dca93b7bf1843b0ac1dededcf2c28e28bf8
+Author: Nathan Pierce <NorseGaud@users.noreply.github.com>
+Date:   Thu Feb 21 16:56:54 2019 -0500
+
+    uninstaller for brew packages, doxygen/graphviz as brew packages, minor improvements to noninteractive logic (#6801)
+
+commit d90df702859061035ca0c3f48ce182e5e6285b3b
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Feb 21 15:32:25 2019 -0600
+
+    Change log level for a few logs suggested by peer review.
+
+commit d942aed99b22e5548d294f57e0a68ea74de92a9c
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Feb 21 15:18:56 2019 -0600
+
+    Update help text
+
+commit fd523fde285d1f0b5ff1a32f05eb6bb7fda1f6f9
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Feb 21 15:15:14 2019 -0600
+
+    Use --verbose to indicate all console output should be printed. Use --full on actions to indicate all console output should be printed.
+
+commit 9688c3619d20b7c5c3c550a9789b692ff015a4a3
+Merge: 186a3d0 dba4a53
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Thu Feb 21 15:56:34 2019 -0500
+
+    Merge pull request #6804 from EOSIO/larryk85-patch-1
+    
+    Replace binaryen reference to wabt
+
+commit dba4a530c40586c1cbc0fcb06a12f80db9e90f2a
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Thu Feb 21 14:52:38 2019 -0500
+
+    Replace binaryen reference to wabt
+
+commit 40172b07840426320cc253b1156eb525bd330d5f
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Feb 21 13:50:53 2019 -0600
+
+    Remove space
+
+commit 297bb1856b516bf11988f01ad18de8a2e971e7be
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Thu Feb 21 13:37:47 2019 -0600
+
+    Use plugin local logger for all net_plugin logging.
+    Co-Authored-By: Vincent Gu <v@vgu.io>
+
+commit 186a3d072d3cff0e03deb0f394044ee2da32fac4
+Merge: accc9e4 c186400
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Thu Feb 21 14:25:51 2019 -0500
+
+    Merge pull request #6802 from EOSIO/remove_fno-builtin-memcmp
+    
+    Remove -fno-builtin-memcmp for gcc builds
+
+commit c1864000b1534a9ff514e54bbd1f0421717b33a2
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Thu Feb 21 13:44:48 2019 -0500
+
+    Remove -fno-builtin-memcmp for gcc builds
+    
+    All indications are this is a holdover from ancient gcc versions and no longer needed
+
+commit accc9e4826d8d94e0fcf5e853457e82361f7a995
+Merge: 3c033bd 1c4b357
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Thu Feb 21 13:02:40 2019 -0500
+
+    Merge pull request #6702 from jeffreyssmith2nd/docker-tags
+    
+    Refactor BUILDKITE_TAG logic in Docker image builds
+
+commit 3c033bd465882998d61d18c50b2c3a93c47d15b2
+Merge: ba16735 7facd29
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Thu Feb 21 10:31:56 2019 -0500
+
+    Merge pull request #6799 from EOSIO/shoter_checktime_hashing_fail
+    
+    Reduce max time allowed for checktime_hashing_fail test
+
+commit 7facd29b5bc15360d72d51d43ef5718f71684e03
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Thu Feb 21 09:43:48 2019 -0500
+
+    Reduce max time allowed for checktime_hashing_fail test
+    
+    On my box I'm seeing periodic failures here where the code completes before 10ms. Reduce the allowed time to 3ms (picked via fair dice roll)
+
+commit ba16735721e07c1ce4006c3882cfa6f9fe8d099e
+Merge: 6307ff0 f0ae767
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Feb 20 22:44:23 2019 -0500
+
+    Merge pull request #6793 from EOSIO/fc-update
+    
+    Update to latest fc
+
+commit f0ae767d3f8e2774d6a9dbeb1035761529dd7185
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 21:07:55 2019 -0600
+
+    Update to latest fc
+
+commit 6307ff070871db05bdea02b338287f03df696430
+Merge: 8b22902 2a84fdf
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Wed Feb 20 21:53:35 2019 -0500
+
+    Merge pull request #6769 from EOSIO/better-errors
+    
+    Display assert to user when --verbose-http-errors not specified
+
+commit 8b22902c03bf02cfb4e561082c23a47639af9466
+Merge: d3f3ce9 796ecf2
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Wed Feb 20 21:35:13 2019 -0500
+
+    Merge pull request #6776 from EOSIO/state-history-warning
+    
+    Add warning to --state-history-endpoint
+
+commit d3f3ce9f241b73ef40795a1dd99075945d221e05
+Merge: b7d19d7 bd0b6f1
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Wed Feb 20 21:34:20 2019 -0500
+
+    Merge pull request #6785 from EOSIO/rex-cleos2
+    
+    Add REX support to cleos
+
+commit 2a84fdf30181eec1fa8cca1e932467b9c3b273cb
+Merge: 8aa7520 2086165
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 20:19:14 2019 -0600
+
+    Merge branch 'better-errors' of https://github.com/eosio/eos into better-errors
+
+commit 8aa75206a6a4a4dd9807c4f6fad7d23a32d3eea2
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 20:06:35 2019 -0600
+
+    Update to latest fc
+
+commit 7d82b8287fdb9f1bde9770aad51eef87dd788b6a
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 10:11:55 2019 -0600
+
+    Add test for mimized format_string
+
+commit df016171624bd02c0a4b433b4392095424306bb7
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 10:11:31 2019 -0600
+
+    Include first level limited log even when limiting http errors
+
+commit 796ecf2cbaf9e9a78dabd5342ab87783dcc53255
+Merge: dfba9e1 b7d19d7
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Wed Feb 20 20:56:16 2019 -0500
+
+    merge develop
+
+commit bd0b6f1f511d3894cd707e4ec2fb00c9e5794e84
+Merge: d8ef7eb b7d19d7
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Wed Feb 20 20:54:58 2019 -0500
+
+    merge develop
+
+commit 2086165c408bc9f68dd69e57f126fd8ef3ce7c68
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 19:20:14 2019 -0600
+
+    Update fc to latest
+
+commit b7d19d7592b92c1b2e2dcaeba41689a029d395d0
+Merge: eb4a50e 5099fa4
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Feb 20 20:16:32 2019 -0500
+
+    Merge pull request #6791 from EOSIO/reinitialize-net-plugin-logger-on-hup
+    
+    Reinitialize net plugin logger on HUP
+
+commit ef9ec22c96b3ae16c1164985c8c73f3ac31d7552
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 19:15:48 2019 -0600
+
+    Update fc to latest
+
+commit dfba9e1cd47522678b933915a3c2687a964c0583
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Wed Feb 20 19:49:42 2019 -0500
+
+    change default endpoint for state history plugin to 127.0.0.1:8080
+
+commit d8ef7ebec1463a924fcb2a6509a0ee5077b3349f
+Author: Khaled Al-Hassanieh <khaled.alhassanieh@gmail.com>
+Date:   Wed Feb 20 19:09:13 2019 -0500
+
+    Small change following code review
+
+commit 5099fa482d6d08f06855749e4f15e4030a9a9356
+Author: Jonathan Giszczak <jonrg@hypercubepc.com>
+Date:   Wed Feb 20 18:07:19 2019 -0600
+
+    Add sighup handlers to bnet and producer plugins.
+
+commit f81f227eff3830d6d409967091c963dc150b4c04
+Author: Khaled Al-Hassanieh <khaled.alhassanieh@gmail.com>
+Date:   Wed Feb 20 18:54:56 2019 -0500
+
+    Small changes following code review
+
+commit eb4a50e13dd8c9ccb9748fda109e1a72500d2ba6
+Merge: acb3ac1 8465513
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Wed Feb 20 18:50:07 2019 -0500
+
+    Merge pull request #6787 from EOSIO/reflect-init-test
+    
+    Fix for reflector_init on derived
+
+commit efe9dcb657a6a30d1842786ffaafd322f0daa159
+Author: Jonathan Giszczak <jonrg@hypercubepc.com>
+Date:   Wed Feb 20 17:24:59 2019 -0600
+
+    Update to thread safe appbase.
+
+commit 8465513402ca302669f50534f30669685ec000fd
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 17:13:17 2019 -0600
+
+    Update to latest fc
+
+commit 87710404f87d4ec9b6237658d9550287484c4fdf
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 16:58:02 2019 -0600
+
+    Update to latest fc
+
+commit acb3ac1910f79ff42aa1f44441046f19778c6a67
+Merge: d3239dc ca300fa
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Feb 20 16:51:51 2019 -0500
+
+    Merge pull request #6733 from EOSIO/libyubihsm2
+    
+    libyubihsm2 upgrade & YubiHSM 2.1 support
+
+commit 4a46330e41905af13714e51fdedc5c747e4b6a14
+Author: Jonathan Giszczak <jonrg@hypercubepc.com>
+Date:   Wed Feb 20 15:50:20 2019 -0600
+
+    Update to requisite appbase.
+
+commit 1ad1eba1b88831e2b2b71be751c972e66df0259a
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 15:38:56 2019 -0600
+
+    Fix copy/paste error found by gcc
+
+commit 10f08f7654bfb08f2559de42b9f26665842e5af8
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 15:28:12 2019 -0600
+
+    Use new reflect_init tag to indicate reflector_init() should be called
+
+commit c34ffb85b8a8e7c5e703c529a139b77d82291e38
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 15:27:30 2019 -0600
+
+    Update to fc with latest fc reflect_init tag
+
+commit ca300fa1d7d5c040ba8e14ac526193b69ae29334
+Merge: 217cd8c d3239dc
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Feb 20 15:55:43 2019 -0500
+
+    Merge remote-tracking branch 'origin/develop' into libyubihsm2
+
+commit d3239dc652a277762104b8ca50f976be5548ac4f
+Merge: 2575c60 b6a2ba3
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Feb 20 15:50:36 2019 -0500
+
+    Merge pull request #6789 from EOSIO/cleanup_centos_package_deps
+    
+    cleanup centos rpm deps
+
+commit 217cd8c97b6b68c6049357b3f7a3ffef1327a377
+Merge: a72dd52 0609156
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 15:33:56 2019 -0500
+
+    Merge branch 'libyubihsm2' of github.com:EOSIO/eos into libyubihsm2
+
+commit a72dd525e676c0a11c9fefba6a057a8c0596ec1d
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 15:33:51 2019 -0500
+
+    removed amazonlinux2 pipeline steps
+
+commit b6a2ba3d1bc423c70c5e2311759db9744eb6d94c
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Feb 20 14:50:49 2019 -0500
+
+    cleanup centos rpm deps
+    
+    Remove mongo, remove -devel versions
+
+commit 060915651285406e204a4749509b77d0e6babf41
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Feb 20 14:33:07 2019 -0500
+
+    set correct libusb requirement in .deb packages
+
+commit 7bbd833558366aa9592424c6a8b748cba182b09b
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 14:05:54 2019 -0500
+
+    removal of extra test
+
+commit 47c937dbeb454b9b32adc44f7be5978cea8f9455
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 13:54:12 2019 -0500
+
+    quick fix
+
+commit d739249510ad9fed227a1ca7d192331e9173a0b1
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 13:53:40 2019 -0500
+
+    quick fix
+
+commit 3fd75dfb84cd9f0cddefc1dddfe50b7cfbed8755
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 13:51:50 2019 -0500
+
+    amazonlinux2 pipeline addition
+
+commit 69dfe2b7607d2aed9414a9a4153c8b06cab13156
+Author: Jonathan Giszczak <jonrg@hypercubepc.com>
+Date:   Wed Feb 20 12:09:03 2019 -0600
+
+    Rename initialize_logging to handle_sighup.
+
+commit 2938b8481c2738302bad069487f88670c5532088
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 11:35:21 2019 -0600
+
+    Update to fc with reflector init fix
+
+commit 1fde58fe428e7e138fa23967d2de8125bead7a04
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 11:35:01 2019 -0600
+
+    Add test for derived of derived reflector init
+
+commit f53599e5e4a3407a817eaaa2ec72f6300ffc4f7c
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 11:32:15 2019 -0500
+
+    amazon2 libcurl-devel
+
+commit 2d2f5a963656f9c667a5a14844ed6dc91253719c
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 10:28:45 2019 -0600
+
+    Update fc to version with reflector_init for derived types fix
+
+commit 6e240f2c782c5fa945144a7c185c58895a405558
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 10:25:17 2019 -0600
+
+    Add times called to reflector_init test. Add serialize check to reflector_init_test.
+
+commit 2575c60841289df869ef9f2d3a9b2cc191302f75
+Merge: 2600ba9 3f35f1e
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Wed Feb 20 11:03:15 2019 -0500
+
+    Merge pull request #6786 from EOSIO/merge-1.6.2
+    
+    Merge 1.6.2 to develop
+
+commit e31a733ba48999a4bdc1b49fc1de7b162d4ad162
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 10:55:18 2019 -0500
+
+    amazon build script reordering
+
+commit 2aa24ed8cceac53cdecc8b8f6dbad243716ad9fe
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 10:37:17 2019 -0500
+
+    various package fixes for Amazonlinux so we get proper JOBS count
+
+commit d9db93466dc6257d779ab6f05ecd5ba54d2956cf
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 10:19:17 2019 -0500
+
+    amazon2 removal from pipeline
+
+commit eb64f90e758e544b99bde83fa3bc37b168031869
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 10:18:10 2019 -0500
+
+    added back amazonlinux2 support for v2-1 images
+
+commit 277565e4a114f880f3ec1c65fff9f1cd0551f6a6
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Wed Feb 20 09:08:40 2019 -0600
+
+    Add test for derived usage of reflector_init
+
+commit 13af70efc772744c0655234fc256bb474fb674a1
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 10:07:06 2019 -0500
+
+    _2-1 amazonlinux
+
+commit b30da9e3f0bee344678703bb4f21f439176951e5
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 09:47:12 2019 -0500
+
+    builder-v2-1 for mac builders and testers
+
+commit a6dfc93d572c6c678fc9de13139a4aebfe061c85
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Wed Feb 20 09:46:20 2019 -0500
+
+    builder-v2-1 for mac builders and testers
+
+commit 3f35f1e9b9733d192457ee325e47942c2ee32e25
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 12:00:15 2019 -0600
+
+    Limit assert message to 1024 chars
+
+commit c8f260783dee923ff6a33e1ba130d1a065237312
+Merge: 1a14e9c 88a2d6a
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Feb 19 19:52:15 2019 -0500
+
+    Merge pull request #6784 from EOSIO/merge-1.6.2
+    
+    Merge 1.6.2
+
+commit 88a2d6a7702ccfdb4f62103d38381a1e2a7395fb
+Merge: 1a14e9c 3d05285
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Feb 19 18:49:06 2019 -0600
+
+    Merge branch 'release/1.6.x' into merge-1.6.2
+
+commit 3d05285f74f42f44f44d652a2149ddf8ebe0b711
+Merge: f97f0de f2d4539
+Author: arhag <arhag@users.noreply.github.com>
+Date:   Tue Feb 19 19:44:27 2019 -0500
+
+    Merge pull request #6746 from EOSIO/bump-version-1.6.2
+    
+    Update version to 1.6.2
+
+commit 3cc5eb01b04749e9a9fcbd7846aba4d50c420232
+Author: Khaled Al-Hassanieh <khaled.alhassanieh@gmail.com>
+Date:   Tue Feb 19 18:38:45 2019 -0500
+
+    Add cleos support for REX actions - 3
+
+commit 57e6ab66a5053b21985032c7be9d7fca9296ddba
+Author: Khaled Al-Hassanieh <khaled.alhassanieh@gmail.com>
+Date:   Sun Feb 17 14:59:22 2019 -0500
+
+    Add cleos support for REX actions - 2
+
+commit 2acea9a741bd4c9d3c6e346ba045007bcf3fa632
+Author: Khaled Al-Hassanieh <khaled.alhassanieh@gmail.com>
+Date:   Fri Feb 15 10:50:42 2019 -0500
+
+    Add cleos support for REX actions
+
+commit 2600ba9f24898e7983c0050831ba13d89143c8f1
+Merge: 6ed86a1 c52a7c2
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Feb 19 18:57:47 2019 -0500
+
+    Merge pull request #6780 from EOSIO/fix/llvm_dir_path
+    
+    Fix/llvm dir path
+
+commit 6ed86a1fa4c1964ec5a23b4370cd3e7da43e1203
+Merge: 0ae565a 063b19c
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Feb 19 18:57:27 2019 -0500
+
+    Merge pull request #6781 from EOSIO/reflect-init
+    
+    reflector_init fix
+
+commit f97f0de5315d76187419f2de704d91c382909862
+Merge: 250e33f fd77886
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Tue Feb 19 18:29:15 2019 -0500
+
+    Merge pull request #6783 from EOSIO/org-limit-assert-1.6.x
+    
+    limit assert 1.6.x
+
+commit e8eceee5f780c7779ca7be3c65eed6861c775748
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Tue Feb 19 18:27:26 2019 -0500
+
+    [skip ci] New image version
+
+commit fd77886a0c76ffa8272abb87c7fcff7a8e1362d1
+Merge: 250e33f 2aa4bed
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Feb 19 17:25:07 2019 -0600
+
+    Merge branch 'limit-assert-1.6.x' into org-limit-assert-1.6.x
+
+commit c52a7c2f6403ae38454f1b07a2b908d3a9850920
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Tue Feb 19 18:19:34 2019 -0500
+
+    Update CMakeLists.txt
+
+commit 831fb52681410c8c5ff96891864187203adedc8a
+Author: Jonathan Giszczak <jonrg@hypercubepc.com>
+Date:   Tue Feb 19 17:15:21 2019 -0600
+
+    Use HUP handler provided by appbase.
+
+commit 063b19ca67032321614afa45d1e8df8e442e621b
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Tue Feb 19 17:00:16 2019 -0600
+
+    Update to fc with reflector_init fix and add unittest for to/from variant of packed_transaction which requires the fix
+
+commit b0e1b12de24f8155e1acafc837a90f8ac5243e17
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Tue Feb 19 17:42:16 2019 -0500
+
+    quick fix
+
+commit 7ddb160768e8af492cf25558dc832fffd6348ca9
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Tue Feb 19 17:33:19 2019 -0500
+
+    removed unneeded variable setting
+
+commit d44fbcfc83a41096cc2960b8c7941735f459ad38
+Author: Bucky Kittinger <larrykittinger@gmail.com>
+Date:   Tue Feb 19 17:32:25 2019 -0500
+
+    changed LLVM_DIR and Intl_INCLUDE_DIR for Apple builds
+
+commit 5e5e86b09c13ff537ba934ecbfe885d9c3738f8a
+Merge: 86d1905 0ae565a
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 17:30:24 2019 -0500
+
+    Merge remote-tracking branch 'origin/develop' into libyubihsm2
+
+commit 86d19055ef36b2e59842f633f0c832bf6374929c
+Merge: d751d69 d6be825
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 17:28:30 2019 -0500
+
+    Merge branch 'libyubihsm2' of https://github.com/EOSIO/eos into libyubihsm2
+
+commit d6be825a7b4c00d0e67dda5db5557c41140af010
+Author: Nathan Pierce <nathan.pierce@block.one>
+Date:   Tue Feb 19 17:27:25 2019 -0500
+
+    new pipeline image names
+
+commit 250e33f70a4cc9b73d70d5ddccc94467e6bc127f
+Merge: e093cfa 56726b0
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 17:21:12 2019 -0500
+
+    Merge pull request #6777 from EOSIO/python_devel_for_aws
+    
+    Make sure python-devel is installed for amazon linux builds - 1.6.x
+
+commit 0ae565a1179bf19fe782087ece22a3407bb5666e
+Merge: f52ccbe f1e13f3
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 17:20:10 2019 -0500
+
+    Merge pull request #6779 from EOSIO/pipeline_use_-y
+    
+    Use -y for noninteractive builds in the CI pipeline
+
+commit f1e13f341809debd9dc46797cbf29ee58582a0a9
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 17:04:00 2019 -0500
+
+    Use -y for noninteractive builds in the CI pipeline
+
+commit d751d690d6188f1c9fade2a52cd076558e634148
+Merge: 2612b5b f52ccbe
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 17:01:22 2019 -0500
+
+    Merge remote-tracking branch 'origin/develop' into libyubihsm2
+
+commit 56726b0a4b45515705e35025120bdf9afcbb493c
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 15:45:03 2019 -0500
+
+    Make sure python-devel is installed for amazon linux builds
+
+commit f52ccbef472061ba2e680f39e62eaa022c3635ae
+Merge: aeb39fc 2a428bc
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 13:57:45 2019 -0500
+
+    Merge pull request #6772 from EOSIO/commonize_non_interactive_option
+    
+    commonize & integrate into getopts noninteractive option
+
+commit e093cfa34f9f75faa4d96e484dbca2d96b9792ec
+Merge: 77b91a1 0cbccbb
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 13:56:56 2019 -0500
+
+    Merge pull request #6771 from EOSIO/fix_fresh_macos_16x
+    
+    Don't unlink what we install via brew - 1.6.x
+
+commit 33b7c238b42bd32e02fff4c112b96f047b008e94
+Author: Todd Fleming <todd.fleming@block.one>
+Date:   Tue Feb 19 13:42:47 2019 -0500
+
+    Add warning to --state-history-endpoint
+
+commit 2612b5b3a710b0cf010d1e25333724d020665718
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 11:42:11 2019 -0500
+
+    Add back the two new deps on macos for new build scripts
+
+commit d1d98319bbaa1ae3677a8c6cc1e86b8667be988f
+Merge: cd98848 aeb39fc
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 11:13:47 2019 -0500
+
+    Merge remote-tracking branch 'origin/develop' into libyubihsm2
+
+commit 2a428bcc6ab53352c994710ead04e8b4cb8670d7
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 10:04:10 2019 -0500
+
+    commonize & integrate into getopts noninteractive option
+    
+    Commonize this option between the 1.5/1.6/1.7 scripts, and integrate the option into getopts so it's properly handled no matter what order options are given to the scropt
+
+commit aeb39fc35d3209eefd81303c4cfd76a1bbef0d2e
+Author: Nathan Pierce <NorseGaud@users.noreply.github.com>
+Date:   Tue Feb 19 09:53:01 2019 -0500
+
+    V2 build scripts for CI and usability
+
+commit 0cbccbb03a04b509790f6a0aec6f4eab52f39794
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Tue Feb 19 09:52:08 2019 -0500
+
+    Don't unlink what we install via brew
+    
+    unlinking eveything we install makes no sense -- it means things like cmake aren't in the path any longer like the script expects. So don't do that any more. Unfortuately this old script requires that gettext be force linked. So implement that behavior explictly for now
+
+commit 77b91a127f570160647e1eaf89c67a8a1fd8ca39
+Merge: 23b06b7 a8c01c8
+Author: jgiszczak <jonrg@hypercubepc.com>
+Date:   Mon Feb 18 15:17:29 2019 -0600
+
+    Merge pull request #6759 from EOSIO/noninteractive_build_scripts_16x
+    
+    add noninteractive option for build scripts - 1.6.x
+
+commit 296e625dee6dea09d7aa538568ce90e1875cbaed
+Author: Jonathan Giszczak <jonrg@hypercubepc.com>
+Date:   Mon Feb 18 14:36:27 2019 -0600
+
+    Reinitialize net_plugin's logger on receipt of SIGHUP. [skip-ci]
+
+commit 2aa4bed95492d2333b95113943a3b5301d5a8298
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 12:00:15 2019 -0600
+
+    Limit assert message to 1024 chars
+
+commit 4ba9d1770fdee40823abc652dd00f7eb3de63ca7
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 10:14:48 2019 -0600
+
+    Update to fc with minimize format_string
+
+commit 82470f910ecbf5f609339ba34befda1efd8746fc
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 10:11:55 2019 -0600
+
+    Add test for mimized format_string
+
+commit 64a9136047c4b0c7cdf4434c2a61fd402ba45b1f
+Author: Kevin Heifner <heifnerk@objectcomputing.com>
+Date:   Mon Feb 18 10:11:31 2019 -0600
+
+    Include first level limited log even when limiting http errors
+
+commit 607eead995cc2bb96f2528abcfc7937f8a6e6811
+Merge: 36a4210 d1ac985
+Author: Kevin Heifner <heifner_k@ociweb.com>
+Date:   Mon Feb 18 09:01:38 2019 -0500
+
+    Merge pull request #6756 from brianjohnson5972/6755-fork-fix
+    
+    Fix net_plugin catchup reported blocks
+
+commit a8c01c810e8730fefadf65e9c4bd5d5d2499ad66
+Author: Matt Witherspoon <32485495+spoonincode@users.noreply.github.com>
+Date:   Sat Feb 16 22:52:25 2019 -0500
+
+    add noninteractive option for build scripts
+
+commit 36a4210fa4f104ac4fdaa8d16f50729ff05e0ed7
+Merge: 7fc6b87 08c11be
+Author: emorybarlow <43506120+emorybarlow@users.noreply.github.com>
+Date:   Fri Feb 15 17:43:34 2019 -0500
+
+    Merge pull request #6757 from EOSIO/fix-brew-file
+    
+    Remove xcode dep and duplicate gmp
