@@ -1311,6 +1311,7 @@ struct list_producers_subcommand {
             std::cout << fc::json::to_pretty_string(rawResult) << std::endl;
             return;
          }
+         
          auto result = rawResult.as<eosio::chain_apis::read_only::get_producers_result>();
          if ( result.rows.empty() ) {
             std::cout << "No producers found" << std::endl;
