@@ -1070,10 +1070,11 @@ struct create_account_subcommand {
                   active = public_key_type(active_key_str);
                } EOS_RETHROW_EXCEPTIONS( public_key_type_exception, "Invalid active public key: ${public_key}", ("public_key", active_key_str) );
             }
-
+            
+            
             auto create = create_newaccount(creator, account_name, owner, active);
             send_actions( { create } );
-
+            
       });
    }
 };
@@ -1311,7 +1312,7 @@ struct list_producers_subcommand {
             std::cout << fc::json::to_pretty_string(rawResult) << std::endl;
             return;
          }
-         
+
          auto result = rawResult.as<eosio::chain_apis::read_only::get_producers_result>();
          if ( result.rows.empty() ) {
             std::cout << "No producers found" << std::endl;
