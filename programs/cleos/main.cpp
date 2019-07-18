@@ -204,23 +204,23 @@ void add_standard_transaction_options(CLI::App* cmd, string default_permission =
       return true;
    };
 
-   cmd->add_option("-x,--expiration", parse_expiration, localized("set the time in seconds before a transaction expires, defaults to 30s"));
-   cmd->add_flag("-f,--force-unique", tx_force_unique, localized("force the transaction to be unique. this will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times"));
-   cmd->add_flag("-s,--skip-sign", tx_skip_sign, localized("Specify if unlocked wallet keys should be used to sign transaction"));
-   cmd->add_flag("-j,--json", tx_print_json, localized("print result as json"));
-   cmd->add_flag("-d,--dont-broadcast", tx_dont_broadcast, localized("don't broadcast transaction to the network (just print to stdout)"));
-   cmd->add_flag("--return-packed", tx_return_packed, localized("used in conjunction with --dont-broadcast to get the packed transaction"));
-   cmd->add_option("-r,--ref-block", tx_ref_block_num_or_id, (localized("set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake)")));
+   //cmd->add_option("-x,--expiration", parse_expiration, localized("set the time in seconds before a transaction expires, defaults to 30s"));
+   //cmd->add_flag("-f,--force-unique", tx_force_unique, localized("force the transaction to be unique. this will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times"));
+   //cmd->add_flag("-s,--skip-sign", tx_skip_sign, localized("Specify if unlocked wallet keys should be used to sign transaction"));
+   //cmd->add_flag("-j,--json", tx_print_json, localized("print result as json"));
+   //cmd->add_flag("-d,--dont-broadcast", tx_dont_broadcast, localized("don't broadcast transaction to the network (just print to stdout)"));
+   //cmd->add_flag("--return-packed", tx_return_packed, localized("used in conjunction with --dont-broadcast to get the packed transaction"));
+   //cmd->add_option("-r,--ref-block", tx_ref_block_num_or_id, (localized("set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake)")));
 
    string msg = "An account and permission level to authorize, as in 'account@permission'";
    if(!default_permission.empty())
       msg += " (defaults to '" + default_permission + "')";
    cmd->add_option("-p,--permission", tx_permission, localized(msg.c_str()));
 
-   cmd->add_option("--max-cpu-usage-ms", tx_max_cpu_usage, localized("set an upper limit on the milliseconds of cpu usage budget, for the execution of the transaction (defaults to 0 which means no limit)"));
-   cmd->add_option("--max-net-usage", tx_max_net_usage, localized("set an upper limit on the net usage budget, in bytes, for the transaction (defaults to 0 which means no limit)"));
+   //cmd->add_option("--max-cpu-usage-ms", tx_max_cpu_usage, localized("set an upper limit on the milliseconds of cpu usage budget, for the execution of the transaction (defaults to 0 which means no limit)"));
+   //cmd->add_option("--max-net-usage", tx_max_net_usage, localized("set an upper limit on the net usage budget, in bytes, for the transaction (defaults to 0 which means no limit)"));
 
-   cmd->add_option("--delay-sec", delaysec, localized("set the delay_sec seconds, defaults to 0s"));
+   //cmd->add_option("--delay-sec", delaysec, localized("set the delay_sec seconds, defaults to 0s"));
 }
 
 vector<chain::permission_level> get_account_permissions(const vector<string>& permissions) {
@@ -921,7 +921,7 @@ void ensure_keosd_running(CLI::App* app) {
     if (app->get_subcommand("create")->got_subcommand("key")) // create key does not require wallet
        return;
     if (auto* subapp = app->get_subcommand("system")) {
-       if (subapp->got_subcommand("listproducers") || subapp->got_subcommand("listbw") || subapp->got_subcommand("bidnameinfo")) // system list* do not require wallet
+       if (subapp->got_subcommand("listproducers") /*|| subapp->got_subcommand("listbw")*/) // system list* do not require wallet
          return;
     }
     if (wallet_url != default_wallet_url)
@@ -991,12 +991,12 @@ struct register_producer_subcommand {
       auto register_producer = actionRoot->add_subcommand("regproducer", localized("Register a new producer"));
       register_producer->add_option("account", producer_str, localized("The account to register as a producer"))->required();
       register_producer->add_option("producer_key", producer_key_str, localized("The producer's public key"))->required();
-      register_producer->add_option("contract", contract_str, localized("The producer's dapp token contract"))->required();
-      register_producer->add_option("transfer_ratio", transfer_ratio, localized("Percentage of payments per CR."))->required();
-      register_producer->add_option("url", url, localized("url where info about producer can be found"), true);
-      register_producer->add_option("location", loc, localized("relative location for purpose of nearest neighbor scheduling"), true);
-      register_producer->add_option("city", city, localized("a city representing a producer"), true);
-      register_producer->add_option("logo", logo, localized("logo representing the producer"), true);
+      //register_producer->add_option("contract", contract_str, localized("The producer's dapp token contract"))->required();
+      //register_producer->add_option("transfer_ratio", transfer_ratio, localized("Percentage of payments per CR."))->required();
+      //register_producer->add_option("url", url, localized("url where info about producer can be found"), true);
+      //register_producer->add_option("location", loc, localized("relative location for purpose of nearest neighbor scheduling"), true);
+      //register_producer->add_option("city", city, localized("a city representing a producer"), true);
+      //register_producer->add_option("logo", logo, localized("logo representing the producer"), true);
       add_standard_transaction_options(register_producer, "account@active");
 
       register_producer->set_callback([this] {
@@ -1006,13 +1006,13 @@ struct register_producer_subcommand {
          } EOS_RETHROW_EXCEPTIONS(public_key_type_exception, "Invalid producer public key: ${public_key}", ("public_key", producer_key_str))
          fc::variant regprod_var = fc::mutable_variant_object()
                   ("producer", producer_str)
-                  ("producer_key", producer_key)
-                  ("contract", contract_str)
-                  ("transfer_ratio", to_dapp_asset(producer_str, transfer_ratio))
-                  ("url", url)
-                  ("location", loc)
-                  ("city", city)
-                  ("logo_256", logo);
+                  ("producer_key", producer_key);
+                  //("contract", contract_str)
+                  //("transfer_ratio", to_dapp_asset(producer_str, transfer_ratio))
+                  //("url", url)
+                  //("location", loc)
+                  //("city", city)
+                  //("logo_256", logo);
          auto accountPermissions = get_account_permissions(tx_permission, {producer_str,config::active_name});
          
          send_actions({create_action(accountPermissions, config::system_account_name, N(regproducer), regprod_var)});
@@ -1097,7 +1097,7 @@ struct unregister_producer_subcommand {
    }
 };
 
-struct change_token_subcommand {
+/*struct change_token_subcommand {
    string producer_str;
    string contract_str;
    string transfer_ratio;
@@ -1118,9 +1118,9 @@ struct change_token_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(changetoken), act_payload)});
       });
    }
-};
+};*/
 
-struct vote_producer_proxy_subcommand {
+/*struct vote_producer_proxy_subcommand {
    string voter_str;
    string proxy_str;
 
@@ -1139,9 +1139,9 @@ struct vote_producer_proxy_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
       });
    }
-};
+};*/
 
-struct vote_producers_subcommand {
+/*struct vote_producers_subcommand {
    string voter_str;
    vector<eosio::name> producer_names;
 
@@ -1163,9 +1163,9 @@ struct vote_producers_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
       });
    }
-};
+};*/
 
-struct approve_producer_subcommand {
+/*struct approve_producer_subcommand {
    eosio::name voter;
    eosio::name producer_name;
 
@@ -1216,9 +1216,9 @@ struct approve_producer_subcommand {
             send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
       });
    }
-};
+};*/
 
-struct unapprove_producer_subcommand {
+/*struct unapprove_producer_subcommand {
    eosio::name voter;
    eosio::name producer_name;
 
@@ -1268,10 +1268,10 @@ struct unapprove_producer_subcommand {
             send_actions({create_action(accountPermissions, config::system_account_name, N(voteproducer), act_payload)});
       });
    }
-};
+};*/
 
 
-struct buyservice_subcommand {
+/*struct buyservice_subcommand {
    string buyer_str;
    string pay_quantity;
    eosio::name producer_name;
@@ -1293,7 +1293,7 @@ struct buyservice_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(buyservice), act_payload)});
       });
    }
-};
+};*/
 
 struct list_producers_subcommand {
    bool print_json = false;
@@ -1380,7 +1380,7 @@ struct get_transaction_id_subcommand {
    }
 };
 
-struct delegate_bandwidth_subcommand {
+/*struct delegate_bandwidth_subcommand {
    string from_str;
    string receiver_str;
    string stake_net_amount;
@@ -1419,9 +1419,9 @@ struct delegate_bandwidth_subcommand {
          send_actions(std::move(acts));
       });
    }
-};
+};*/
 
-struct undelegate_bandwidth_subcommand {
+/*struct undelegate_bandwidth_subcommand {
    string from_str;
    string receiver_str;
    string unstake_net_amount;
@@ -1446,9 +1446,9 @@ struct undelegate_bandwidth_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(undelegatebw), act_payload)});
       });
    }
-};
+};*/
 
-struct bidname_subcommand {
+/*struct bidname_subcommand {
    string bidder_str;
    string newname_str;
    string bid_amount;
@@ -1467,9 +1467,9 @@ struct bidname_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(bidname), act_payload)});
       });
    }
-};
+};*/
 
-struct bidname_info_subcommand {
+/*struct bidname_info_subcommand {
    bool print_json = false;
    name newname;
    bidname_info_subcommand(CLI::App* actionRoot) {
@@ -1508,9 +1508,9 @@ struct bidname_info_subcommand {
          if (bid < 0) std::cout << "This auction has already closed" << std::endl;
       });
    }
-};
+};*/
 
-struct list_bw_subcommand {
+/*struct list_bw_subcommand {
    eosio::name account;
    bool print_json = false;
 
@@ -1545,9 +1545,9 @@ struct list_bw_subcommand {
             }
       });
    }
-};
+};*/
 
-struct buyram_subcommand {
+/*struct buyram_subcommand {
    string from_str;
    string receiver_str;
    string amount;
@@ -1571,9 +1571,9 @@ struct buyram_subcommand {
          }
       });
    }
-};
+};*/
 
-struct sellram_subcommand {
+/*struct sellram_subcommand {
    string from_str;
    string receiver_str;
    uint64_t amount;
@@ -1592,9 +1592,9 @@ struct sellram_subcommand {
             send_actions({create_action(accountPermissions, config::system_account_name, N(sellram), act_payload)});
          });
    }
-};
+};*/
 
-struct claimrewards_subcommand {
+/*struct claimrewards_subcommand {
    string owner;
 
    claimrewards_subcommand(CLI::App* actionRoot) {
@@ -1609,9 +1609,9 @@ struct claimrewards_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(claimrewards), act_payload)});
       });
    }
-};
+};*/
 
-struct regproxy_subcommand {
+/*struct regproxy_subcommand {
    string proxy;
    string name;
    string slogan;
@@ -1644,9 +1644,9 @@ struct regproxy_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(regproxy), act_payload)});
       });
    }
-};
+};*/
 
-struct unregproxy_subcommand {
+/*struct unregproxy_subcommand {
    string proxy;
 
    unregproxy_subcommand(CLI::App* actionRoot) {
@@ -1661,9 +1661,9 @@ struct unregproxy_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(regproxy), act_payload)});
       });
    }
-};
+};*/
 
-struct canceldelay_subcommand {
+/*struct canceldelay_subcommand {
    string canceling_account;
    string canceling_permission;
    string trx_id;
@@ -1684,8 +1684,9 @@ struct canceldelay_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, N(canceldelay), act_payload)});
       });
    }
-};
+};*/
 
+/****************
 struct deposit_subcommand {
    string owner_str;
    string amount_str;
@@ -1831,9 +1832,9 @@ struct cancelrexorder_subcommand {
          send_actions({create_action(accountPermissions, config::system_account_name, act_name, act_payload)});
       });
    }
-};
+};*/
 
-struct rentcpu_subcommand {
+/*struct rentcpu_subcommand {
    string from_str;
    string receiver_str;
    string loan_payment_str;
@@ -2084,6 +2085,9 @@ struct closerex_subcommand {
       });
    }
 };
+
+
+********************/
 
 void get_account( const string& accountName, const string& coresym, bool json_format ) {
    fc::variant json;
@@ -3851,20 +3855,22 @@ int main( int argc, char** argv ) {
    system->require_subcommand();
 
    auto createAccountSystem = create_account_subcommand( system, false /*simple*/ );
-
    auto registerProducer = register_producer_subcommand(system);
-   // auto updateProducer = update_producer_subcommand(system);
    auto unregisterProducer = unregister_producer_subcommand(system);
-   auto changetoken = change_token_subcommand(system);
+   auto listProducers = list_producers_subcommand(system);
 
-   auto voteProducer = system->add_subcommand("voteproducer", localized("Vote for a producer"));
-   voteProducer->require_subcommand();
-   auto voteProxy = vote_producer_proxy_subcommand(voteProducer);
-   auto voteProducers = vote_producers_subcommand(voteProducer);
-   auto approveProducer = approve_producer_subcommand(voteProducer);
-   auto unapproveProducer = unapprove_producer_subcommand(voteProducer);
+   // auto updateProducer = update_producer_subcommand(system);
+   
+   //auto changetoken = change_token_subcommand(system);
 
-   auto buyService = buyservice_subcommand(system);
+   //auto voteProducer = system->add_subcommand("voteproducer", localized("Vote for a producer"));
+   //voteProducer->require_subcommand();
+   //auto voteProxy = vote_producer_proxy_subcommand(voteProducer);
+   //auto voteProducers = vote_producers_subcommand(voteProducer);
+   //auto approveProducer = approve_producer_subcommand(voteProducer);
+   //auto unapproveProducer = unapprove_producer_subcommand(voteProducer);
+
+   //auto buyService = buyservice_subcommand(system);
    // auto voteProducers = vote_producers_subcommand(system);
    // auto voteProducer = vote_producer_subcommand(system);
    // auto voteProducer = system->add_subcommand("voteproducer", localized("Vote for a producer"));
@@ -3874,24 +3880,25 @@ int main( int argc, char** argv ) {
    // auto approveProducer = approve_producer_subcommand(voteProducer);
    // auto unapproveProducer = unapprove_producer_subcommand(voteProducer);
 
-   auto listProducers = list_producers_subcommand(system);
+   
 
-   auto delegateBandWidth = delegate_bandwidth_subcommand(system);
-   auto undelegateBandWidth = undelegate_bandwidth_subcommand(system);
-   auto listBandWidth = list_bw_subcommand(system);
-   auto bidname = bidname_subcommand(system);
-   auto bidnameinfo = bidname_info_subcommand(system);
+   //auto delegateBandWidth = delegate_bandwidth_subcommand(system);
+   //auto undelegateBandWidth = undelegate_bandwidth_subcommand(system);
+   //auto listBandWidth = list_bw_subcommand(system);
+   //auto bidname = bidname_subcommand(system);
+   //auto bidnameinfo = bidname_info_subcommand(system);
 
-   auto buyram = buyram_subcommand(system);
-   auto sellram = sellram_subcommand(system);
+   //auto buyram = buyram_subcommand(system);
+   //auto sellram = sellram_subcommand(system);
 
-   auto claimRewards = claimrewards_subcommand(system);
+   //auto claimRewards = claimrewards_subcommand(system);
 
-   auto regProxy = regproxy_subcommand(system);
-   auto unregProxy = unregproxy_subcommand(system);
+   //auto regProxy = regproxy_subcommand(system);
+   //auto unregProxy = unregproxy_subcommand(system);
 
-   auto cancelDelay = canceldelay_subcommand(system);
+   //auto cancelDelay = canceldelay_subcommand(system);
 
+   /**********
    auto rex = system->add_subcommand("rex", localized("Actions related to REX (the resource exchange)"));
    rex->require_subcommand();
    auto deposit        = deposit_subcommand(rex);
@@ -3913,6 +3920,8 @@ int main( int argc, char** argv ) {
    auto updaterex      = updaterex_subcommand(rex);
    auto rexexec        = rexexec_subcommand(rex);
    auto closerex       = closerex_subcommand(rex);
+   
+   ********/
 
 
    try {
