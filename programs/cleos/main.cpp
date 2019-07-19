@@ -1079,11 +1079,11 @@ struct create_account_subcommand {
    }
 };
 
-struct unregister_producer_subcommand {
+struct remove_producer_subcommand {
    string producer_str;
 
-   unregister_producer_subcommand(CLI::App* actionRoot) {
-      auto unregister_producer = actionRoot->add_subcommand("unregprod", localized("Unregister an existing producer"));
+   remove_producer_subcommand(CLI::App* actionRoot) {
+      auto unregister_producer = actionRoot->add_subcommand("rmvproducer", localized("Unregister an existing producer"));
       unregister_producer->add_option("account", producer_str, localized("The account to unregister as a producer"))->required();
       add_standard_transaction_options(unregister_producer, "account@active");
 
@@ -1092,7 +1092,7 @@ struct unregister_producer_subcommand {
                   ("producer", producer_str);
 
          auto accountPermissions = get_account_permissions(tx_permission, {producer_str,config::active_name});
-         send_actions({create_action(accountPermissions, config::system_account_name, N(unregprod), act_payload)});
+         send_actions({create_action(accountPermissions, config::system_account_name, N(rmvproducer), act_payload)});
       });
    }
 };
@@ -3856,7 +3856,7 @@ int main( int argc, char** argv ) {
 
    auto createAccountSystem = create_account_subcommand( system, false /*simple*/ );
    auto registerProducer = register_producer_subcommand(system);
-   auto unregisterProducer = unregister_producer_subcommand(system);
+   auto removeProducer = remove_producer_subcommand(system);
    auto listProducers = list_producers_subcommand(system);
 
    // auto updateProducer = update_producer_subcommand(system);
